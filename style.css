@@ -1057,6 +1057,7 @@ div label[for=ui-component-toggle__yearly] {
 .navbar {
   overflow: hidden;
   background-color: #333;
+  width: 100%;
 }
 
 .navbar a {
