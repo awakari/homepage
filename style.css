@@ -845,7 +845,7 @@ div label[for=ui-component-toggle__yearly] {
   LAYOUT
   ------------------------------------------------------------*/
   
-  .ui-layout-container { width: 90rem; margin-left: 0; margin-right: 0;}
+  .ui-layout-container { width: 90rem; }
 
   .ui-layout-grid-3 { grid-template-columns: repeat(3, 1fr); }
 
