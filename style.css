@@ -170,6 +170,10 @@ h2 {
   margin-bottom: var(--ui-typography-margin-heading);
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+}
+
 h1 {
   font-size: var(--ui-typography-h1);
   line-height: var(--ui-typography-h1-leading);
