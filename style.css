@@ -426,6 +426,7 @@ div label[for=ui-component-toggle__yearly] {
   top: -1rem;
   transition: all 250ms cubic-bezier(.785, .135, .15, .86);
   visibility: hidden;
+  width: 100%;
 }
 
 #ui-section-header--menu-id:checked ~
