@@ -347,11 +347,11 @@ div label[for=ui-component-toggle__yearly] {
 }
 
 .ui-component-list--item-check {
-  background-image: url(https://res.cloudinary.com/uisual/image/upload/assets/icons/check.svg);
+  background-image: url(check.svg);
 }
 
 .ui-component-list--item-cross {
-  background-image: url(https://res.cloudinary.com/uisual/image/upload/assets/icons/cross.svg);
+  background-image: url(cross.svg);
 }
 
 /*--------------------------------------------------------------
@@ -698,7 +698,8 @@ div label[for=ui-component-toggle__yearly] {
   }
 
   .ui-layout-grid-2,
-  .ui-layout-grid-3 {
+  .ui-layout-grid-3,
+  .ui-layout-grid-4 {
     column-gap: var(--ui-layout-gutter);
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
@@ -854,6 +855,8 @@ div label[for=ui-component-toggle__yearly] {
   .ui-layout-container { width: 90rem; }
 
   .ui-layout-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .ui-layout-grid-4 { grid-template-columns: repeat(4, 1fr); }
 
   .ui-layout-grid-3 div:nth-of-type(3) { position: static; }
 

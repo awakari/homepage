@@ -65,7 +65,6 @@
                   <a href="#pricing-cloud-free-usage">Cloud - Free Usage</a>
                   <a href="#pricing-cloud-dedicated-client">Cloud - Dedicated Client</a>
                   <a href="#pricing-own-rss-feed">Own RSS Feed</a>
-                  <a href="#pricing-self-hosted">Self-Hosted</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -155,16 +154,52 @@
       <section class="ui-section-feature" id="features">
         <div class="ui-layout-container">
           <h2>Features</h2>
-          <p>Subscribe using custom message matching conditions:</p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Arbitrary Metadata</li></h3>
-          <p>Choose a key to match, for example <code><i>category</i></code>, <code><i>location</i></code> or <code><i>language</i></code></p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Value Patterns</li></h3>
-          <p>Specify a wildcard, for example <code><i>*el?ow</i></code></p>
-          <p>This will match the values like <code><i>yellow</i></code> and <code><i>elbow</i></code></p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Composite Conditions</li></h3>
-          <p>Grouping, nested conditions and groups</p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Logic Functions</li></h3>
-          <p><code><i>And</i></code>, <code><i>Or</i></code>, <code><i>Xor</i></code>, <code><i>Not</i></code></p>
+          <p>Subscribe using custom message matching conditions.</p>
+
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div>
+              <li class="ui-component-list--item ui-component-list--item-check"><span><strong>Arbitrary Metadata</strong></span></li>
+              <p>Specify custom keys to match:</p>
+            </div>
+            <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-4">
+              <li class="ui-component-list--item ui-component-list--item-check">category</li>
+              <li class="ui-component-list--item ui-component-list--item-check">language</li>
+              <li class="ui-component-list--item ui-component-list--item-check">location</li>
+              <li class="ui-component-list--item ui-component-list--item-check">...</li>
+            </div>
+          </div>
+
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div>
+              <li class="ui-component-list--item ui-component-list--item-check"><span><strong>Pattern Matching</strong></span></li>
+              <p>For example <code><i>*el?ow</i></code> will match:</p>
+            </div>
+            <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-3">
+              <li class="ui-component-list--item ui-component-list--item-check">yellow</li>
+              <li class="ui-component-list--item ui-component-list--item-check">elbow</li>
+              <li class="ui-component-list--item ui-component-list--item-check">...</li>
+            </div>
+          </div>
+
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div>
+              <li class="ui-component-list--item ui-component-list--item-check"><span><strong>Composite Conditions</strong></span></li>
+              <p>Groups of nested conditions and groups</p>
+            </div>
+          </div>
+
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div>
+              <li class="ui-component-list--item ui-component-list--item-check"><span><strong>Logic Functions</strong></span></li>
+              <p></p>
+            </div>
+            <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-4">
+              <li class="ui-component-list--item ui-component-list--item-check">And</li>
+              <li class="ui-component-list--item ui-component-list--item-check">Or</li>
+              <li class="ui-component-list--item ui-component-list--item-check">Xor</li>
+              <li class="ui-component-list--item ui-component-list--item-check">Not</li>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -232,34 +267,41 @@
       <section class="ui-section-feature" id="pricing-cloud-dedicated-client">
         <div class="ui-layout-container">
           <h2>Dedicated Cloud Client</h2>
-          <p>
-            Define custom usage limits
-            <table>
-              <tr>
-                <td>Every 1 day of the certificate validity</td>
-                <td>&nbsp;&nbsp;</td>
-                <td>1€</td>
-              </tr>
-              <tr>
-                <td>Every 1 active subscription, starting from the 2nd</td>
-                <td>&nbsp;&nbsp;</td>
-                <td>1€</td>
-              </tr>
-              <tr>
-                <td>Every 1 message per day, starting from the 2nd</td>
-                <td>&nbsp;&nbsp;</td>
-                <td>1€</td>
-              </tr>
-            </table>
-          </p>
-          <h3>Example</h3>
-          <p>
-            The total price of the dedicated certificate that permits to have up to 10 active subscriptions and
-            publish up to 100 messages per day for 1 month will be:
-          </p>
-          <p>
-            1€ * 30 days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 138€
-          </p>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div class="ui-component-card ui-component-card--pricing">
+              <h3>Define custom usage limits</h3>
+              <table>
+                <tr>
+                  <td>Every 1 day of the certificate validity</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                </tr>
+                <tr>
+                  <td>
+                    Every 1 active subscription<br/>
+                    <span><small>1st is free, starting from the 2nd</small></span>
+                  </td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                </tr>
+                <tr>
+                  <td>
+                    Every 1 message per day<br/>
+                    <span><small>1st is free, starting from the 2nd</small></span>
+                  </td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <h3>Example</h3>
+              <p>
+                The total price of the dedicated certificate that permits to have up to 10 active subscriptions and
+                publish up to 100 messages per day for 1 month will be:
+              </p>
+              <p>
+                1€ * 30 days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 138€
+              </p>
+            </div>
+          </div>
           <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Dedicated Certificate</a>
         </div>
       </section>
@@ -268,28 +310,26 @@
         <div class="ui-layout-container">
           <h2>Own RSS Feed</h2>
           <p>Having own RSS feed? Provide the feed URL to us and Awakari will consume it.</p>
-          <table>
-            <tr>
-              <td>Every 1 feed consumption</td>
-              <td>&nbsp;&nbsp;</td>
-              <td>1€</td>
-            </tr>
-          </table>
-          <h3>Example</h3>
-          <p>
-            The total price of an RSS feed being consumed every hour by Awakari for 1 month:
-          </p>
-          <p>
-            1€ * 30 days * 24 hours = 720€
-          </p>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div class="ui-component-card ui-component-card--pricing">
+              <table>
+                <tr>
+                  <td>Every 1 feed consumption</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                </tr>
+              </table>
+            </div>
+            <div>
+              <h3>Example</h3>
+              <p>
+                The total price of an RSS feed being consumed every hour by Awakari for 1 month:
+              </p>
+              <p>
+                1€ * 30 days * 24 hours = 720€
+              </p>
+            </div>
+          </div>
           <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Submit RSS Feed</a>
-        </div>
-      </section>
-
-      <section class="ui-section-feature" id="pricing-self-hosted">
-        <div class="ui-layout-container">
-          <h2>Pricing: Self-Hosted</h2>
-          <a href="mailto:awakari@awakari.com" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Contact Us &#10697;</a>
         </div>
       </section>
 
