@@ -117,9 +117,9 @@
               <h1>Awakari</h1>
               <p class="ui-text-intro">
                 Cloud-native instant messaging platform.
-                No more channels full of irrelevant info.
+                No more channels full of garbage.
                 Subscribe only for what is important.
-                Advertise own messages.
+                Advertise own information.
               </p>
               <div class="ui-component-cta ui-layout-flex">
                 <a href="#pricing-cloud-free-usage" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
@@ -157,19 +157,20 @@
           <h2>Features</h2>
           <p>Subscribe using custom message matching conditions:</p>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Arbitrary Metadata</li></h3>
-          <p>Choose a key to match, for example "category", "location" or "language"</p>
+          <p>Choose a key to match, for example <code><i>category</i></code>, <code><i>location</i></code> or <code><i>language</i></code></p>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Value Patterns</li></h3>
-          <p>Specify a wildcard, for example "*el?ow"</p>
+          <p>Specify a wildcard, for example <code><i>*el?ow</i></code></p>
+          <p>This will match the values like <code><i>yellow</i></code> and <code><i>elbow</i></code></p>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Composite Conditions</li></h3>
           <p>Grouping, nested conditions and groups</p>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Logic Functions</li></h3>
-          <p>And, Or, Xor, Not</p>
+          <p><code><i>And</i></code>, <code><i>Or</i></code>, <code><i>Xor</i></code>, <code><i>Not</i></code></p>
         </div>
       </section>
 
       <section class="ui-section-feature" id="solutions-use-cases">
         <div class="ui-layout-container">
-          <h2>Solutions: Use Cases</h2>
+          <h2>Use Cases</h2>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Get Notified</li></h3>
           <p>Subscribe for important info and receive the relevant information in the real time.</p>
           <h3><li class="ui-component-list--item ui-component-list--item-check">Advertise</li></h3>
@@ -179,7 +180,7 @@
 
       <section class="ui-section-feature" id="solutions-cloud">
         <div class="ui-layout-container">
-          <h2>Solutions: Cloud</h2>
+          <h2>Cloud</h2>
           <h3><li class="ui-component-list--item ui-component-list--item-cross"><code>awakari.cloud:443</code></li></h3>
           <p>Production instance. Coming Soon.</p>
           <h3><li class="ui-component-list--item ui-component-list--item-check"><code>demo.awakari.cloud:443</code></li></h3>
@@ -189,7 +190,7 @@
 
       <section class="ui-section-feature" id="solutions-self-hosted">
         <div class="ui-layout-container">
-          <h2>Solutions: Self-Hosted</h2>
+          <h2>Self-Hosted</h2>
           <p>Awakari <a href="https://github.com/awakari/core">Core &#10697;</a> is free for a personal use.</p>
           <p>See the <a href="https://github.com/awakari/core#3-deployment">details &#10697;</a> to deploy own instance.</p>
           <p><a href="mailto:awakari@awakari.com">Contact us &#10697;</a> to obtain a license to deploy a private instance for a commercial use.</p>
@@ -198,25 +199,37 @@
 
       <section class="ui-section-feature" id="pricing-cloud-free-usage">
         <div class="ui-layout-container">
-          <h2>Pricing: Cloud: Free Usage</h2>
-          <div>
-            <h3>Shared Client</h3>
-            <p>Doesn't require any authentication.</p>
-            <p>Shared usage limits: 1000 subscription (total), 1000 message per day to publish.</p>
-            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Free Shared Certificate</a>
-          </div>
-          <div>
-            <h3>Personal Client</h3>
-            <p>Requires user authentication.</p>
-            <p>Free usage limits: 1 subscription (total), 1 message per day to publish.</p>
-            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Free Personal Certificate</a>
+          <h2>Free Cloud Usage</h2>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div class="ui-component-card ui-component-card--pricing">
+              <h3>Shared</h3>
+              <p>Shared Usage Limits</p>
+              <!-- LIST -->
+              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
+                <li class="ui-component-list--item ui-component-list--item-check">Have up to 1000 subscriptions</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1000 messages per day</li>
+              </ul>
+              <!-- CTA -->
+              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-secondary">Download Free Shared Certificate</a>
+            </div>
+            <div class="ui-component-card ui-component-card--pricing">
+              <h3>Personal</h3>
+              <p>Requires Authentication</p>
+              <!-- LIST -->
+              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
+                <li class="ui-component-list--item ui-component-list--item-check">1 subscription</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1 message per day</li>
+              </ul>
+              <!-- CTA -->
+              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-secondary">Request Free Personal Certificate</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="ui-section-feature" id="pricing-cloud-dedicated-client">
         <div class="ui-layout-container">
-          <h2>Pricing: Cloud: Dedicated Client</h2>
+          <h2>Dedicated Cloud Client</h2>
           <p>
             With a dedicated certificate custom usage limits are defined.
             <table>
@@ -251,7 +264,7 @@
 
       <section class="ui-section-feature" id="pricing-own-rss-feed">
         <div class="ui-layout-container">
-          <h2>Pricing: Own RSS Feed</h2>
+          <h2>Own RSS Feed</h2>
           <p>Having own RSS feed? Provide the feed URL to us and Awakari will consume it.</p>
           <table>
             <tr>

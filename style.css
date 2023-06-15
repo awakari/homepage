@@ -185,7 +185,7 @@ h2 {
 }
 
 p,
-ul { margin-bottom: var(--ui-typography-margin-body); }
+ul { margin-bottom: 1rem; }
 
 p:last-child,
 ul:last-child { margin-bottom: 0; }
