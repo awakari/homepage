@@ -1060,7 +1060,6 @@ div label[for=ui-component-toggle__yearly] {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
   width: 100%;
 }
 
@@ -1082,7 +1081,6 @@ div label[for=ui-component-toggle__yearly] {
   font-size: 16px;
   border: none;
   outline: none;
-  color: white;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -1091,6 +1089,7 @@ div label[for=ui-component-toggle__yearly] {
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: gray;
+  color: black;
 }
 
 .dropdown-content {
