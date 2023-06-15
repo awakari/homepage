@@ -706,8 +706,8 @@ div label[for=ui-component-toggle__yearly] {
   }
 
   .ui-layout-column-4 {
-    width: calc((var(--ui-layout-grid) * 4) +
-           (var(--ui-layout-gutter) * 3));
+    width: calc((var(--ui-layout-grid) * 5) +
+           (var(--ui-layout-gutter) * 4));
   }
 
   /*------------------------------------------------------------
@@ -996,7 +996,7 @@ div label[for=ui-component-toggle__yearly] {
   }
 
   .ui-section-feature__layout:last-of-type {
-    margin-top: 7.5rem;
+    margin-top: 2.5rem;
   }
 
   /* LIST */

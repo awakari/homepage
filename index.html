@@ -131,9 +131,9 @@
 
       <section class="ui-section-feature" id="about">
         <div class="ui-layout-container">
+          <h2>About</h2>
           <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
-            <div class="ui-layout-column-4">
-              <h2>About</h2>
+            <div>
               <p class="ui-text-intro">
                 Conventional search is used to find an important information by a query.
                 The problem is reverse in the modern world of real-time message streams.
@@ -146,10 +146,10 @@
               <p class="ui-text-intro">
                 Awakari comes to solve this problem by using flexible subscriptions instead of channels.
               </p>
-              <ul class="ui-component-list ui-component-list-feature ui-layout-grid">
-                <li class="ui-component-list--item ui-component-list--item-check">Receive Relevant Only Info</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Instant Delivery</li>
+              <ul class="ui-component-list ui-component-list-feature">
                 <li class="ui-component-list--item ui-component-list--item-check">Cloud Native</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Instant Delivery</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Relevant Only Info</li>
               </ul>
             </div>
           </div>
@@ -158,23 +158,92 @@
 
       <section class="ui-section-feature" id="features">
         <div class="ui-layout-container">
+          <h2>Features</h2>
+          <p>Subscribe using custom message matching conditions:</p>
+          <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
+            <div class="ui-layout-column-4">
+              <h3><li class="ui-component-list--item ui-component-list--item-check">Arbitrary Metadata Keys</li></h3>
+              <ul class="ui-component-list ui-component-list-feature">
+                <li class="ui-component-list--item ui-component-list--item-check">"category"</li>
+                <li class="ui-component-list--item ui-component-list--item-check">"location"</li>
+                <li class="ui-component-list--item ui-component-list--item-check">"language"</li>
+                <li class="ui-component-list--item ui-component-list--item-check">...</li>
+              </ul>
+            </div>
+            <div class="ui-layout-column-4">
+              <h3><li class="ui-component-list--item ui-component-list--item-check">Value Patterns</li></h3>
+              <ul class="ui-component-list ui-component-list-feature">
+                <li class="ui-component-list--item ui-component-list--item-check">*el?ow</li>
+                <li class="ui-component-list--item ui-component-list--item-check">count:_###</li>
+                <li class="ui-component-list--item ui-component-list--item-check">...</li>
+              </ul>
+            </div>
+            <div class="ui-layout-column-4">
+              <h3><li class="ui-component-list--item ui-component-list--item-check">Composite Conditions</li></h3>
+              <ul class="ui-component-list ui-component-list-feature">
+                <li class="ui-component-list--item ui-component-list--item-check">Grouping</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Nested conditions and groups</li>
+              </ul>
+            </div>
+            <div class="ui-layout-column-4">
+              <h3><li class="ui-component-list--item ui-component-list--item-check">Logic Functions</li></h3>
+              <ul class="ui-component-list ui-component-list-feature">
+                <li class="ui-component-list--item ui-component-list--item-check">And</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Or</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Xor</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Not</li>
+              </ul>
+            </div>
+        </div>
+      </section>
+
+      <section class="ui-section-feature" id="comparison">
+        <div class="ui-layout-container">
           <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
             <div>
-              <h2>Features</h2>
-              <p>Subscribe using custom message matching conditions:</p>
-              <ul class="ui-component-list ui-component-list-feature ui-layout-grid">
-                <li class="ui-component-list--item ui-component-list--item-check">
-                  <p>Arbitrary metadata</p>
-                  <p>Select a key like "language" or "location"</p>
-                </li>
-                <li class="ui-component-list--item ui-component-list--item-check">
-                  <p>Wildcards</p>
-                  <p>Specify globs like "*" or "?" in the matching criteria</p>
-                </li>
-                <li class="ui-component-list--item ui-component-list--item-check">Composite conditions</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Logic functions: And, Or, Xor, Not</li>
-                </ul>
-              </ul>
+              <h2>Comparison</h2>
+              <p>The key differences from other messaging solutions</p>
+              <table>
+                <thead>
+                <tr>
+                  <td rowspan="2" colspan="2"><b>Criteria</b></td>
+                  <td colspan="4" align="center"><b>Solution</b></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"><b>Awakari</b></td>
+                  <td align="center" valign="top"><b>Kafka</b></td>
+                  <td align="center" valign="top"><b>Nats<br/>(JetStream)</b></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td rowspan="2">Wildcard Subscriptions</td>
+                  <td>Horizontal Scalability</td>
+                  <td align="center"><img width="16px" src="icon-yes.svg" title=""/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title="consumer- side topic matching"/></td>
+                  <td align="center"><img width="16px" src="icon-yes.svg" title=""/></td>
+                </tr>
+                <tr>
+                  <td>Matching Time Complexity</td>
+                  <td align="center"><img width="16px" src="icon-yes.svg" title="O(log(N)) for kiwi-tree subscriptions"/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title="O(N)"/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title="O(N)"/></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">Matching Criteria</td>
+                  <td>Attributes</td>
+                  <td align="center"><img width="16px" src="icon-yes.svg" title="Any metadata (key/value)"/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title="Topic only"/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title="Subject only"/></td>
+                </tr>
+                <tr>
+                  <td>Grouping and Logic</td>
+                  <td align="center"><img width="16px" src="icon-yes.svg" title="nested arbitrary groups + logic and/or/xor"/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title=""/></td>
+                  <td align="center"><img width="16px" src="icon-no.svg" title=""/></td>
+                </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
