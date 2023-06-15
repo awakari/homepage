@@ -845,7 +845,7 @@ div label[for=ui-component-toggle__yearly] {
   LAYOUT
   ------------------------------------------------------------*/
   
-  .ui-layout-container { width: 60rem; }
+  .ui-layout-container { width: 90rem; margin-left: 0; margin-right: 0;}
 
   .ui-layout-grid-3 { grid-template-columns: repeat(3, 1fr); }
 
@@ -929,7 +929,7 @@ div label[for=ui-component-toggle__yearly] {
   LAYOUT
   ------------------------------------------------------------*/
   
-  .ui-layout-container { width: 70rem; }
+  .ui-layout-container { width: 90rem; }
 
   /*------------------------------------------------------------
   COMPONENT
@@ -957,7 +957,7 @@ div label[for=ui-component-toggle__yearly] {
   |
   ------------------------------------------------------------*/
 
-  .ui-section-header { padding-top: 3rem; }
+  .ui-section-header { padding-top: 0; }
 
   /*------------------------------------------------------------
   |
