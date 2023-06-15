@@ -45,7 +45,6 @@
                 <div class="dropdown-content">
                   <a href="#about">About</a>
                   <a href="#features">Features</a>
-                  <a href="#comparison">Comparison</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -53,9 +52,9 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="#">Use Cases</a>
-                  <a href="#">Cloud</a>
-                  <a href="#">Self-Hosted</a>
+                  <a href="#solutions-use-cases">Use Cases</a>
+                  <a href="#solutions-cloud">Cloud</a>
+                  <a href="#solutions-self-hosted">Self-Hosted</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -165,55 +164,18 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="comparison">
+      <section class="ui-section-feature" id="use-cases">
         <div class="ui-layout-container">
-          <div class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2">
-            <div>
-              <h2>Comparison</h2>
-              <p>The key differences from other messaging solutions</p>
-              <table>
-                <thead>
-                <tr>
-                  <td rowspan="2" colspan="2"><h3>Criteria</h3></td>
-                  <td colspan="4" align="center"><h3>Solution</h3></td>
-                </tr>
-                <tr>
-                  <td align="center" valign="top"><h4>Awakari</h4></td>
-                  <td align="center" valign="top"><h4>Kafka</h4></td>
-                  <td align="center" valign="top"><h4>Nats<br/>(JetStream)</h4></td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td rowspan="2"><h4>Wildcard Subscriptions</h4></td>
-                  <td>Horizontal Scalability</td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">No, consumer side topic matching</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-                </tr>
-                <tr>
-                  <td>Matching Time Complexity</td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-check">O(log(N))</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">O(N)</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">O(N)</li></td>
-                </tr>
-                <tr>
-                  <td rowspan="2"><h4>Matching Criteria</h4></td>
-                  <td>Attributes</td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-check">Arbitrary</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">Topic only</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">Subject only</li></td>
-                </tr>
-                <tr>
-                  <td>Composite</td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
-                  <td align="center"><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <h2>Features</h2>
+          <p>Subscribe using custom message matching conditions:</p>
+          <h3><li class="ui-component-list--item ui-component-list--item-check">Arbitrary Metadata</li></h3>
+          <p>Choose a key to match, for example "category", "location" or "language"</p>
+          <h3><li class="ui-component-list--item ui-component-list--item-check">Value Patterns</li></h3>
+          <p>Specify a wildcard, for example "*el?ow"</p>
+          <h3><li class="ui-component-list--item ui-component-list--item-check">Composite Conditions</li></h3>
+          <p>Grouping, nested conditions and groups</p>
+          <h3><li class="ui-component-list--item ui-component-list--item-check">Logic Functions</li></h3>
+          <p>And, Or, Xor, Not</p>
         </div>
       </section>
 
