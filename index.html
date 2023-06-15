@@ -62,7 +62,8 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="#pricing-cloud-client">Cloud Client</a>
+                  <a href="#pricing-cloud-free-usage">Cloud - Free Usage</a>
+                  <a href="#pricing-cloud-dedicated-client">Cloud - Dedicated Client</a>
                   <a href="#pricing-own-rss-feed">Own RSS Feed</a>
                   <a href="#pricing-self-hosted">Self-Hosted</a>
                 </div>
@@ -96,7 +97,9 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="mailto:awakari@awakari.com">Email</a>
-                    <a href="#request-client-certificate">Request Client Certificate</a>
+                    <a href="#request-free-cloud-certificate">Request Free Personal Cloud Certificate</a>
+                    <a href="#request-dedicated-cloud-certificate">Request Dedicated Cloud Certificate</a>
+                    <a href="#submit-rss-feed">Submit RSS Feed</a>
                   </div>
                 </div>
               </div>
@@ -193,46 +196,85 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="pricing-cloud-client">
+      <section class="ui-section-feature" id="pricing-cloud-free-usage">
         <div class="ui-layout-container">
-          <h2>Pricing: Cloud Client</h2>
+          <h2>Pricing: Cloud: Free Usage</h2>
           <div>
-            <h3>Free Certificate</h3>
-            <p>Usage limits (per user): 1 subscription (total), 1 message per day to publish.</p>
-            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Free Certificate</a>
+            <h3>Shared Client</h3>
+            <p>Doesn't require any authentication.</p>
+            <p>Shared usage limits: 1000 subscription (total), 1000 message per day to publish.</p>
+            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Shared Certificate</a>
           </div>
           <div>
-            <h3>Dedicated Certificate</h3>
-            <p>
-              With a dedicated certificate custom usage limits are defined.
-              <table>
-                <tr>
-                  <td>Every 1 day of the certificate validity</td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>1€</td>
-                </tr>
-                <tr>
-                  <td>Every 1 active subscription, starting from 2nd</td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>1€</td>
-                </tr>
-                <tr>
-                  <td>Every 1 message per day, starting from the 2nd</td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>1€</td>
-                </tr>
-              </table>
-            </p>
-            <h4>Example</h4>
-            <p>
-              The total price of the dedicated certificate that permits to have up to 10 active subscriptions and
-              publish up to 100 messages per day for 1 month will be:
-            </p>
-            <p>
-              1€ * 30 days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 138€
-            </p>
-            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Dedicated Certificate</a>
+            <h3>Personal Client</h3>
+            <p>Requires user authentication.</p>
+            <p>Free usage limits: 1 subscription (total), 1 message per day to publish.</p>
+            <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Free Personal Certificate</a>
           </div>
+        </div>
+      </section>
+
+      <section class="ui-section-feature" id="pricing-cloud-dedicated-client">
+        <div class="ui-layout-container">
+          <h2>Pricing: Cloud: Dedicated Client</h2>
+          <p>
+            With a dedicated certificate custom usage limits are defined.
+            <table>
+              <tr>
+                <td>Every 1 day of the certificate validity</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>1€</td>
+              </tr>
+              <tr>
+                <td>Every 1 active subscription, starting from the 2nd</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>1€</td>
+              </tr>
+              <tr>
+                <td>Every 1 message per day, starting from the 2nd</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>1€</td>
+              </tr>
+            </table>
+          </p>
+          <h3>Example</h3>
+          <p>
+            The total price of the dedicated certificate that permits to have up to 10 active subscriptions and
+            publish up to 100 messages per day for 1 month will be:
+          </p>
+          <p>
+            1€ * 30 days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 138€
+          </p>
+          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Dedicated Certificate</a>
+        </div>
+      </section>
+
+      <section class="ui-section-feature" id="pricing-own-rss-feed">
+        <div class="ui-layout-container">
+          <h2>Pricing: Own RSS Feed</h2>
+          <p>Having own RSS feed? Provide the feed URL to us and Awakari will consume it.</p>
+          <table>
+            <tr>
+              <td>Every 1 feed consumption</td>
+              <td>&nbsp;&nbsp;</td>
+              <td>1€</td>
+            </tr>
+          </table>
+          <h3>Example</h3>
+          <p>
+            The total price of an RSS feed being consumed every hour by Awakari for 1 month:
+          </p>
+          <p>
+            1€ * 30 days * 24 hours = 720€
+          </p>
+          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Submit RSS Feed</a>
+        </div>
+      </section>
+
+      <section class="ui-section-feature" id="pricing-self-hosted">
+        <div class="ui-layout-container">
+          <h2>Pricing: Self-Hosted</h2>
+          <a href="mailto:awakari@awakari.com" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Contact Us</a>
         </div>
       </section>
 
