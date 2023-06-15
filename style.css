@@ -754,6 +754,7 @@ div label[for=ui-component-toggle__yearly] {
     padding: 0;
     position: static;
     visibility: visible;
+    width: 100%;
   }
   
   .ui-section-header--nav-link {
