@@ -33,7 +33,7 @@
       <div class="ui-layout-container">
         <div class="ui-section-header__layout ui-layout-flex">
           <!-- HAMBURGER -->
-          <input type="checkbox" id="ui-section-header--menu-id">
+          <input type="checkbox" id="ui-section-header--menu-id" class="fa fa-bars"/>
           <label for="ui-section-header--menu-id" class="ui-section-header--menu-icon"></label>
           <!-- MENU -->
           <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
@@ -86,7 +86,7 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="mailto:awakari@awakari.com">Email &#10697;</a>
-                    <a href="#request-dedicated-certificate">Request Dedicated Certificate</a>
+                    <a href="#get-custom-cloud-certificate">Get Custom Cloud Certificate</a>
                     <a href="#submit-rss-feed">Submit RSS Feed</a>
                   </div>
                 </div>
@@ -331,8 +331,8 @@
                 Check access:
                 <pre>
 grpcurl \
-  -key john.doe-demo.awakari.cloud.key \
-  -cert john.doe-demo.awakari.cloud.crt \
+  -key shared-demo.awakari.cloud.key \
+  -cert shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d '{"subj": 1}' \
@@ -343,8 +343,8 @@ grpcurl \
                 Create a subscription:
                 <pre>
 grpcurl \
-  -key john.doe-demo.awakari.cloud.key \
-  -cert john.doe-demo.awakari.cloud.crt \
+  -key shared-demo.awakari.cloud.key \
+  -cert shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -379,8 +379,8 @@ grpcurl \
 grpcurl \
   -proto cloudevent.proto \
   -max-time 86400 \
-  -key john.doe-demo.awakari.cloud.key \
-  -cert john.doe-demo.awakari.cloud.crt \
+  -key shared-demo.awakari.cloud.key \
+  -cert shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -395,8 +395,8 @@ grpcurl \
                 <pre>
 grpcurl \
   -proto cloudevent.proto \
-  -key john.doe-demo.awakari.cloud.key \
-  -cert john.doe-demo.awakari.cloud.crt \
+  -key shared-demo.awakari.cloud.key \
+  -cert shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -435,7 +435,56 @@ grpcurl \
                 <pre>
 {"ack": { "count": 1}}</pre>
               </li>
+              <li>
+                That's it! Delete the subscription to clean up:
+                <pre>
+grpcurl \
+  -key shared-demo.awakari.cloud.key \
+  -cert shared-demo.awakari.cloud.crt \
+  -cacert ca-demo.awakari.cloud.crt \
+  -H 'X-Awakari-User-Id: john.doe' \
+  -d '{"id": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}'
+  demo.awakari.cloud:443 \
+  awakari.subscriptions.Service/Delete</pre>
+              </li>
             </ol>
+        </div>
+      </section>
+
+      <section class="ui-section-feature" id="get-custom-cloud-certificate">
+        <div class="ui-layout-container">
+          <h2>Get Custom Cloud Certificate</h2>
+          <FORM Name="form-custom-cloud-certificate">
+            <table>
+              <tr>
+                <td><label for="certValidDays">Certificate validity (days):</label></td>
+                <td><input type="range" onChange="calcCertPrice()" id="certValidDays" min="30" max="365" value="30"/></td>
+              </tr>
+              <tr>
+                <td><label for="msgPubDailyLimit">Publish messages daily limit:</label></td>
+                <td><input type="range" onChange="calcCertPrice()" id="msgPubDailyLimit" min="1" max="1000000" value="1"/></td>
+              </tr>
+              <tr>
+                <td><label for="subCountLimit">Subscription count limit:</label></td>
+                <td><input type="range" onChange="calcCertPrice()" id="subCountLimit" min="1" max="1000000" value="1"/></td>
+              </tr>
+            </table>
+
+            <SELECT NAME="hddItem" onChange="calculatePrice()" id="hddItem">
+              <OPTION value="0">Select One Choice from List-HDD Upgrade</OPTION>
+              <OPTION value="109">1 TB HD add $109</OPTION>
+              <OPTION value="150">1.5 TB HD add $150</OPTION>
+              <OPTION value="199">2 TB HD add $199</OPTION>
+              <OPTION value="299">250 GB SSD add $299</OPTION>
+            </SELECT>
+
+            <SELECT NAME="networkItem" onChange="calculatePrice()" id="networkItem">
+              <OPTION value="0">Select One Choice from List- Network Upgrade</OPTION>
+              <OPTION value="109">56K V90 or X2 Modem add $109</OPTION>
+              <OPTION value="79">10/100 NIC add $79</OPTION>
+              <OPTION value="279">Combo Modem and NIC add $279</OPTION>
+            </SELECT>
+          </FORM>
         </div>
       </section>
 
