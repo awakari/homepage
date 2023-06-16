@@ -354,6 +354,14 @@ div label[for=ui-component-toggle__yearly] {
   background-image: url(cross.svg);
 }
 
+.ui-component-list--item-question {
+  background-image: url(question.svg);
+}
+
+.ui-component-list--item-avatar {
+  background-image: url(avatar.svg);
+}
+
 /*--------------------------------------------------------------
 7.0 SECTION
 --------------------------------------------------------------*/
