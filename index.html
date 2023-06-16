@@ -337,8 +337,7 @@ grpcurl \
   -H 'X-Awakari-User-Id: john.doe' \
   -d '{"subj": 1}' \
   demo.awakari.cloud:443 \
-  awakari.api.limits.Service/Get
-                </pre>
+  awakari.api.limits.Service/Get</pre>
               </li>
               <li>
                 Create a subscription:
@@ -350,8 +349,7 @@ grpcurl \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
   demo.awakari.cloud:443 \
-  awakari.subscriptions.Service/Create
-                </pre>
+  awakari.subscriptions.Service/Create</pre>
                 Insert the subscription input data and press ^D:
                 <pre>
 {
@@ -367,14 +365,12 @@ grpcurl \
         "partial": true
       }
     }
-}
-                </pre>
+}</pre>
                 The successful response looks like:
                 <pre>
 {
   "id": "e8ed2e43-8e55-4765-8183-c743fb2c3612"
-}
-                </pre>
+}</pre>
                 Note the created subscription id and use it further to read the messages.
               </li>
               <li>
@@ -389,12 +385,10 @@ grpcurl \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
   demo.awakari.cloud:443 \
-  awakari.reader.Service/Read
-                </pre>
+  awakari.reader.Service/Read</pre>
                 Specify the subscription id in the request and press Enter:
                 <pre>
-{"start": {"batchSize": 1, "subId": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}}
-                </pre>
+{"start": {"batchSize": 1, "subId": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}}</pre>
               </li>
               <li>
                 Switch to another shell/window to publish a message:
@@ -407,8 +401,7 @@ grpcurl \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
   demo.awakari.cloud:443 \
-  awakari.writer.Service/SubmitMessages
-                </pre>
+  awakari.writer.Service/SubmitMessages</pre>
                 Then send the request with a message payload:
                 <pre>
 {
@@ -429,21 +422,18 @@ grpcurl \
          "text_data": "I felt a great disturbance in the force"
       }
    ]
-}
-                </pre>
+}</pre>
                 The successful response looks like:
                 <pre>
 {
   "ackCount": 1
-}
-                </pre>
+}</pre>
               </li>
               <li>Switch back to the window/shell where reading was started and observe the message is received</li>
               <li>
                 Acknowledge the received message by typing:
                 <pre>
-{"ack": { "count": 1}}
-                </pre>
+{"ack": { "count": 1}}</pre>
               </li>
             </ol>
         </div>
