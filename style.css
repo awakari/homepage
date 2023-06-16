@@ -403,7 +403,7 @@ div label[for=ui-component-toggle__yearly] {
   background: var(--ui-color-brand);
   content: "";
   height: .125rem;
-  left: 0;
+  right: 0;
   position: absolute;
   transition: all 250ms cubic-bezier(.785, .135, .15, .86);
   width: 1.125rem;
