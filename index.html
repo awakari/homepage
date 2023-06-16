@@ -62,8 +62,8 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="#pricing-cloud-free-usage">Cloud - Free Usage</a>
-                  <a href="#pricing-cloud-dedicated-client">Cloud - Dedicated Client</a>
+                  <a href="#pricing-free-usage">Free Usage</a>
+                  <a href="#pricing-custom-usage-limits">Custom Usage Limits</a>
                   <a href="#pricing-own-rss-feed">Own RSS Feed</a>
                 </div>
               </div>
@@ -96,8 +96,7 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="mailto:awakari@awakari.com">Email &#10697;</a>
-                    <a href="#request-free-cloud-certificate">Request Free Personal Cloud Certificate</a>
-                    <a href="#request-dedicated-cloud-certificate">Request Dedicated Cloud Certificate</a>
+                    <a href="#request-dedicated-certificate">Request Dedicated Certificate</a>
                     <a href="#submit-rss-feed">Submit RSS Feed</a>
                   </div>
                 </div>
@@ -121,7 +120,7 @@
                 Advertise own information.
               </p>
               <div class="ui-component-cta ui-layout-flex">
-                <a href="#pricing-cloud-free-usage" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
+                <a href="#pricing-free-usage" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
               </div>
             </div>
             <!-- IMAGE -->
@@ -159,16 +158,18 @@
             <p>Get notified about the new messages in the real time.</p>
             <li class="ui-component-list--item ui-component-list--item-check"><h3>Relevant Messages</h3></li>
             <p>Subscribe using custom message matching conditions.</p>
-            <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
-              <div class="ui-component-card ui-component-card--pricing">
-                <li class="ui-component-list--item ui-component-list--item-check"><h4>Arbitrary Metadata</h4></li>
-                <p>Specify custom keys to match: <i>category, location, ...</i></p>
+            <div class="ui-component-card ui-component-card--pricing ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+              <div>
+                <div>
+                  <li class="ui-component-list--item ui-component-list--item-check"><h4>Arbitrary Metadata</h4></li>
+                  <p>Specify custom keys to match: <i>category, location, ...</i></p>
+                </div>
                 <div>
                   <li class="ui-component-list--item ui-component-list--item-check"><h4>Pattern Matching</h4></li>
                   <p>For example <code><b>*el?ow</b></code> will match: <i>yellow, elbow, ...</i></p>
                 </div>
               </div>
-              <div class="ui-component-card ui-component-card--pricing">
+              <div>
                 <div>
                   <li class="ui-component-list--item ui-component-list--item-check"><h4>Composite Conditions</h4></li>
                   <p>Groups of nested conditions and groups</p>
@@ -212,9 +213,9 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="pricing-cloud-free-usage">
+      <section class="ui-section-feature" id="pricing-free-usage">
         <div class="ui-layout-container">
-          <h2>Free Cloud Usage</h2>
+          <h2>Free Usage</h2>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Shared</h3>
@@ -224,6 +225,7 @@
                 <li class="ui-component-list--item ui-component-list--item-cross">Demo instance only</li>
                 <li class="ui-component-list--item ui-component-list--item-check">Up to 1000 subscriptions</li>
                 <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1000 messages per day</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Valid until 2023-09-10</li>
               </ul>
               <!-- CTA -->
               <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Get Free Certificate</a>
@@ -236,6 +238,7 @@
                 <li class="ui-component-list--item ui-component-list--item-cross">Coming soon</li>
                 <li class="ui-component-list--item ui-component-list--item-check">1 subscription</li>
                 <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1 message per day</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Valid for 30 days</li>
               </ul>
               <!-- CTA -->
               <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-secondary">Get Free Certificate</a>
@@ -244,45 +247,49 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="pricing-cloud-dedicated-client">
+      <section class="ui-section-feature" id="pricing-custom-usage-limits">
         <div class="ui-layout-container">
-          <h2>Dedicated Cloud Client</h2>
+          <h2>Custom Usage Limits</h2>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Define custom usage limits</h3>
               <table>
                 <tr>
-                  <td>Every 1 day of the certificate validity</td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                  <th>Subject</th>
+                  <th>Price</th>
+                  <th>Units</th>
                 </tr>
                 <tr>
-                  <td>
-                    Every 1 active subscription<br/>
-                    <span><small>1st is free, starting from the 2nd</small></span>
-                  </td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                  <td>Certificate Validity</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
+                  <td>(days - 30)</td>
+                  <td><span><small>first 30 days free</small></span></td>
                 </tr>
                 <tr>
-                  <td>
-                    Every 1 message per day<br/>
-                    <span><small>1st is free, starting from the 2nd</small></span>
+                  <td>Subscriptions<br/>
                   </td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
+                  <td>(total count - 1)</td>
+                  <td><span><small>first is for free</small></span></td>
+                </tr>
+                <tr>
+                  <td>Publish Message<br/>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
+                  <td>(count per day - 1)</td>
+                  <td><span><small>first is for free</small></span></td>
                 </tr>
               </table>
             </div>
             <div>
               <h3>Example</h3>
               <p>
-                The total price of the dedicated certificate that permits to have up to 10 active subscriptions and
-                publish up to 100 messages per day for 1 month will be:
+                The total price of the custom certificate valid for 1 year that permits to have up to 10 subscriptions and publish up to 100 messages per day:
               </p>
               <p>
-                1€ * 30 days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 138€
+                1€ * (365 - 30) days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 443€
               </p>
             </div>
           </div>
-          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Dedicated Certificate</a>
+          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Get Custom Certificate</a>
         </div>
       </section>
 
@@ -294,8 +301,14 @@
             <div class="ui-component-card ui-component-card--pricing">
               <table>
                 <tr>
-                  <td>Every 1 feed consumption</td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€</td>
+                  <th>Subject</th>
+                  <th>Price</th>
+                  <th>Units</th>
+                </tr>
+                <tr>
+                  <td>Consume Feed</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
+                  <td>times</td>
                 </tr>
               </table>
             </div>
