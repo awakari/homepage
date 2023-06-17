@@ -34,7 +34,7 @@
         <div class="ui-section-header__layout ui-layout-flex">
           <!-- HAMBURGER -->
           <input type="checkbox" id="ui-section-header--menu-id"/>
-          <label for="ui-section-header--menu-id" class="fa fa-bars"></label>
+          <label for="ui-section-header--menu-id" class="ui-section-header--menu-icon"></label>
           <!-- MENU -->
           <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
             <div class="navbar">
@@ -62,8 +62,6 @@
                 </button>
                 <div class="dropdown-content">
                   <a href="#pricing-free-usage">Free Usage</a>
-                  <a href="#pricing-custom-usage-limits">Custom Usage Limits</a>
-                  <a href="#pricing-own-rss-feed">Own RSS Feed</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -86,8 +84,7 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="mailto:awakari@awakari.com">Email &#10697;</a>
-                    <a href="#get-custom-cloud-certificate">Get Custom Cloud Certificate</a>
-                    <a href="#submit-rss-feed">Submit RSS Feed</a>
+                    <a href="#get-dedicated-cloud-certificate">Get Dedicated Cloud Certificate</a>
                   </div>
                 </div>
               </div>
@@ -211,111 +208,30 @@
           <h2>Free Usage</h2>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Shared</h3>
-              <p>Shared Usage Limits</p>
+              <h3>Shared Limits</h3>
               <!-- LIST -->
               <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
                 <li class="ui-component-list--item ui-component-list--item-cross">Demo instance only</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Up to 1000 subscriptions</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1000 messages per day</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Up to 1K subscriptions</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1M messages</li>
                 <li class="ui-component-list--item ui-component-list--item-check">Valid until 2023-09-10</li>
               </ul>
               <!-- CTA -->
               <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Get Free Certificate</a>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Dedicated</h3>
-              <p>Requires Authentication</p>
+              <h3>Dedicated Limits</h3>
               <!-- LIST -->
               <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
-                <li class="ui-component-list--item ui-component-list--item-cross">Coming soon</li>
+                <li class="ui-component-list--item ui-component-list--item-avatar">Requires Authentication</li>
                 <li class="ui-component-list--item ui-component-list--item-check">1 subscription</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 1 message per day</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 100 messages</li>
                 <li class="ui-component-list--item ui-component-list--item-check">Valid for 30 days</li>
               </ul>
               <!-- CTA -->
               <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-secondary">Get Free Certificate</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="ui-section-feature" id="pricing-custom-usage-limits">
-        <div class="ui-layout-container">
-          <h2>Custom Usage Limits</h2>
-          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
-            <div class="ui-component-card ui-component-card--pricing">
-              <table>
-                <tr>
-                  <th>Subject</th>
-                  <th>Price</th>
-                  <th>Units</th>
-                </tr>
-                <tr>
-                  <td>Certificate Validity</td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
-                  <td>(days - 30)</td>
-                  <td><span><small>first 30 days free</small></span></td>
-                </tr>
-                <tr>
-                  <td>Subscriptions<br/>
-                  </td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
-                  <td>(total count - 1)</td>
-                  <td><span><small>first is for free</small></span></td>
-                </tr>
-                <tr>
-                  <td>Publish Message<br/>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
-                  <td>(count per day - 1)</td>
-                  <td><span><small>first is for free</small></span></td>
-                </tr>
-              </table>
-            </div>
-            <div>
-              <h3>Example</h3>
-              <p>
-                The total price of the custom certificate valid for 1 year that permits to have up to 10 subscriptions and publish up to 100 messages per day:
-              </p>
-              <p>
-                1€ * (365 - 30) days + 1€ * (10 - 1) subs + 1€ * (100 - 1) msgs = 443€
-              </p>
-            </div>
-          </div>
-          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Get Custom Certificate</a>
-        </div>
-      </section>
-
-      <section class="ui-section-feature" id="pricing-own-rss-feed">
-        <div class="ui-layout-container">
-          <h2>Own RSS Feed</h2>
-          <p>Having own RSS feed? Provide the feed URL to us and Awakari will consume it.</p>
-          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
-            <div class="ui-component-card ui-component-card--pricing">
-              <table>
-                <tr>
-                  <th>Subject</th>
-                  <th>Price</th>
-                  <th>Units</th>
-                </tr>
-                <tr>
-                  <td>Consume Feed</td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;1€ x</td>
-                  <td>times</td>
-                </tr>
-              </table>
-            </div>
-            <div>
-              <h3>Example</h3>
-              <p>
-                The total price of an RSS feed being consumed every hour by Awakari for 1 month:
-              </p>
-              <p>
-                1€ * 30 days * 24 hours = 720€
-              </p>
-            </div>
-          </div>
-          <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Submit RSS Feed</a>
         </div>
       </section>
 
@@ -448,28 +364,6 @@ grpcurl \
   awakari.subscriptions.Service/Delete</pre>
               </li>
             </ol>
-        </div>
-      </section>
-
-      <section class="ui-section-feature" id="get-custom-cloud-certificate">
-        <div class="ui-layout-container">
-          <h2>Get Custom Cloud Certificate</h2>
-          <FORM Name="form-custom-cloud-certificate">
-            <table>
-              <tr>
-                <td><label for="certValidDays">Certificate validity (days):</label></td>
-                <td><input type="range" onChange="calcCertPrice()" id="certValidDays" min="30" max="365" value="30"/></td>
-              </tr>
-              <tr>
-                <td><label for="msgPubDailyLimit">Publish messages daily limit:</label></td>
-                <td><input type="range" onChange="calcCertPrice()" id="msgPubDailyLimit" min="1" max="1000000" value="1"/></td>
-              </tr>
-              <tr>
-                <td><label for="subCountLimit">Subscription count limit:</label></td>
-                <td><input type="range" onChange="calcCertPrice()" id="subCountLimit" min="1" max="1000000" value="1"/></td>
-              </tr>
-            </table>
-          </FORM>
         </div>
       </section>
 

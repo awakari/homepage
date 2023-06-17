@@ -1099,8 +1099,8 @@ div label[for=ui-component-toggle__yearly] {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: gray;
-  color: black;
+  background-color: #444444;
+  color: white;
 }
 
 .dropdown-content {
@@ -1122,7 +1122,8 @@ div label[for=ui-component-toggle__yearly] {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  color: white;
+  background-color: #444444;
 }
 
 .dropdown:hover .dropdown-content {
