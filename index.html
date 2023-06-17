@@ -9,6 +9,7 @@
     <meta name="description" content="#">
     <meta name="referrer" content="unsafe-url">
     <meta name="robots" content="index, follow">
+    <meta name="google-signin-client_id" content="670591843914-e4vfiva92235duknmnrauflfe3qo326s.apps.googleusercontent.com">
     <!-- SPEED -->
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
@@ -27,8 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- TITLE -->
     <title>Awakari</title>
-    <script src="https://apis.google.com/js/platform.js"></script>
-    <script src="https://accounts.google.com/gsi/client"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="script.js"></script>
   </head>
   <body>
@@ -374,12 +374,27 @@ grpcurl \
         <div class="ui-layout-container">
           <h2>Get Dedicated Cloud Certificate</h2>
           <p>Requires Authentication</p>
-          <div id="g_id_onload"
-               data-client_id="670591843914-e4vfiva92235duknmnrauflfe3qo326s.apps.googleusercontent.com"
-               data-auto_prompt="false"
-               data-logo="google">
-          </div>
-          <button id="auth-google">Google Account</button>
+          <div id="auth-google"></div>
+          <script>
+            function onSuccess(googleUser) {
+              console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            }
+            function onFailure(error) {
+              console.log(error);
+            }
+            function renderButton() {
+              gapi.signin2.render('auth-google', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+              });
+            }
+          </script>
+          <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
         </div>
       </section>
 
