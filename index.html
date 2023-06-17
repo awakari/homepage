@@ -28,8 +28,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- TITLE -->
     <title>Awakari</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="script.js"></script>
   </head>
   <body>
     <header role="banner" class="ui-section-header">
@@ -374,6 +372,8 @@ grpcurl \
         <div class="ui-layout-container">
           <h2>Get Dedicated Cloud Certificate</h2>
           <p>Requires Authentication</p>
+
+          <!-- google -->
           <div id="auth-google"></div>
           <script>
             function onSuccess(googleUser) {
