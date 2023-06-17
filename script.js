@@ -5,7 +5,7 @@ function handleCredentialResponse(response) {
 
 function renderSignInButton() {
     const auth2 = gapi.auth2.getAuthInstance();
-    auth2.attachClickHandler('signin-button', {}, handleCredentialResponse);
+    auth2.attachClickHandler('auth-google', {}, handleCredentialResponse);
 }
 
 function loadGoogleAuth() {
@@ -16,4 +16,6 @@ function loadGoogleAuth() {
     });
 }
 
-document.getElementById('signin-button').addEventListener('click', loadGoogleAuth);
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('auth-google').addEventListener('click', loadGoogleAuth);
+})
