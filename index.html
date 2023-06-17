@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- TITLE -->
     <title>Awakari</title>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
     <script src="script.js"></script>
   </head>
   <body>
@@ -377,7 +379,7 @@ grpcurl \
                data-auto_prompt="false"
                data-logo="google">
           </div>
-          <a id="auth-google" class="ui-component-button ui-component-button-normal ui-component-button-primary">Google Account</a>
+          <button id="auth-google">Google Account</button>
         </div>
       </section>
 
@@ -626,7 +628,5 @@ grpcurl \
         </div>
       </div>
     </footer>
-
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </body>
 </html>
