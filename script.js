@@ -16,4 +16,4 @@ function loadGoogleAuth() {
     });
 }
 
-document.getElementById('auth-google').addEventListener('click', loadGoogleAuth);
+document.getElementById('signin-button').addEventListener('click', loadGoogleAuth);
