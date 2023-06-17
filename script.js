@@ -11,7 +11,7 @@ function renderSignInButton() {
 function loadGoogleAuth() {
     gapi.load('auth2', function () {
         gapi.auth2.init({
-            client_id: 'YOUR_CLIENT_ID',
+            client_id: '670591843914-e4vfiva92235duknmnrauflfe3qo326s.apps.googleusercontent.com',
         }).then(renderSignInButton);
     });
 }
