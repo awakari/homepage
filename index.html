@@ -86,7 +86,6 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="mailto:awakari@awakari.com">Email &#10697;</a>
-                    <a href="#get-dedicated-cloud-certificate">Get Dedicated Cloud Certificate</a>
                   </div>
                 </div>
               </div>
@@ -189,7 +188,7 @@
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Cloud</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="#">Certificate</a> is required to access</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-avatar">A certificate is required to access</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-check">No deployment is needed</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-cross"><code>awakari.cloud:443</code> (coming soon)</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-check"><code>demo.awakari.cloud:443</code> (min resources, no guarantee)</li></p>
@@ -197,7 +196,7 @@
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Self-Hosted</h3>
               <p><li class="ui-component-list--item ui-component-list--item-cross">Core functions only</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-question">Deployment <a href="https://github.com/awakari/core#3-deployment">instructions &#10697;</a></li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-question">Deployment <a href="https://github.com/awakari/core#3-deployment">instructions &#10697;</a> are available</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-check">Free for a personal use</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="mailto:awakari@awakari.com">Contact us &#10697;</a> to obtain a commercial license </li></p>
             </div>
@@ -219,7 +218,7 @@
                 <li class="ui-component-list--item ui-component-list--item-check">Valid until 2023-09-10</li>
               </ul>
               <!-- CTA -->
-              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Get Free Certificate</a>
+              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Certificate</a>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Dedicated Limits</h3>
@@ -231,7 +230,7 @@
                 <li class="ui-component-list--item ui-component-list--item-check">Valid for 30 days</li>
               </ul>
               <!-- CTA -->
-              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-secondary">Get Free Certificate</a>
+              <a href="#get-dedicated-cloud-certificate" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
             </div>
           </div>
         </div>
@@ -249,8 +248,8 @@
                 Check access:
                 <pre>
 grpcurl \
-  -key shared-demo.awakari.cloud.key \
-  -cert shared-demo.awakari.cloud.crt \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d '{"subj": 1}' \
@@ -261,8 +260,8 @@ grpcurl \
                 Create a subscription:
                 <pre>
 grpcurl \
-  -key shared-demo.awakari.cloud.key \
-  -cert shared-demo.awakari.cloud.crt \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -297,8 +296,8 @@ grpcurl \
 grpcurl \
   -proto cloudevent.proto \
   -max-time 86400 \
-  -key shared-demo.awakari.cloud.key \
-  -cert shared-demo.awakari.cloud.crt \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -313,8 +312,8 @@ grpcurl \
                 <pre>
 grpcurl \
   -proto cloudevent.proto \
-  -key shared-demo.awakari.cloud.key \
-  -cert shared-demo.awakari.cloud.crt \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d @ \
@@ -357,8 +356,8 @@ grpcurl \
                 That's it! Delete the subscription to clean up:
                 <pre>
 grpcurl \
-  -key shared-demo.awakari.cloud.key \
-  -cert shared-demo.awakari.cloud.crt \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
   -d '{"id": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}'
@@ -372,9 +371,11 @@ grpcurl \
       <section class="ui-section-feature" id="get-dedicated-cloud-certificate">
         <div class="ui-layout-container">
           <h2>Get Dedicated Cloud Certificate</h2>
-          <p>Requires Authentication</p>
+          <p>Please send a request <a href="mailto:awakari@awakari.com">email &#10697;</a> to get the certificate.</p>
+          <p>The requested certificate will be in the response email.</p>
 
-          <!-- google -->
+          <!-- TODO google auth when client cert issuing is automated -->
+          <!--
           <script src="https://accounts.google.com/gsi/client" async defer></script>
           <script src="script.js" async defer></script>
           <div id="g_id_onload"
@@ -393,8 +394,7 @@ grpcurl \
                data-logo_alignment="left"
                data-width="200">
           </div>
-
-          <!-- add more below: telegram, etc ... -->
+          -->
 
         </div>
       </section>

@@ -3,8 +3,6 @@ function handleAuthGoogle(response) {
     // Decode the JWT token
     const decodedToken = jwt_decode(credential);
     // Extract the user email from the decoded token
-    console.log(decodedToken);
     const userEmail = decodedToken.email;
-    // Use the userEmail as needed (e.g., send it in an email)
-    console.log(userEmail);
+    // TODO request to issue a client certificate by the email
 }
