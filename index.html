@@ -240,12 +240,18 @@
         <div class="ui-layout-container">
           <h2>Quick Start</h2>
           <p>The instructions below apply to the cloud instances only. To start using self-hosted instance, follow this <a href="https://github.com/awakari/core#4-usage">link &#10697;</a>.</p>
+          <h3>Preparation Steps:</h3>
             <ol>
               <li>Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a></li>
               <li>Download <a href="certs/ca-demo.awakari.cloud.crt">the CA file</a> for the demo instance and save it to the current directory</li>
               <li>Download <a href="certs/client-shared-demo.awakari.cloud.crt">the shared client certificate</a></li> and save it to the current directory</li>
               <li>Download <a href="certs/client-shared-demo.awakari.cloud.key">the shared client key</a></li> and save it to the current directory</li>
-              <li>Download <a href="https://github.com/awakari/reader/blob/master/api/grpc/cloudevents/cloudevent.proto">the Cloud Events protobuf file</a> and save it in the current directory</li>
+              <li>Download <a href="proto/cloudevent.proto">the Cloud Events proto file</a> and save it in the current directory</li>
+              <li>Download <a href="proto/reader.proto">the Reader service proto file</a> and save it in the current directory</li>
+              <li>Download <a href="proto/writer.proto">the Writer service proto file</a> and save it in the current directory</li>
+            </ol>
+          <h3>Basic Usage Walkthrough:</h3>
+          <ol>
               <li>
                 Check access:
                 <pre>
@@ -254,9 +260,16 @@ grpcurl \
   -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
-  -d '{"subj": 1}' \
+  -d '{"subj": 2}' \
   demo.awakari.cloud:443 \
   awakari.api.limits.Service/Get</pre>
+                The successful response looks like:
+                <pre>
+{
+  "count": "123"
+}</pre>
+                That means that the count limit for the subject 2 (subscriptions) is 123.
+                There's also a subject 1 meaning the messages count limit those may be published.
               </li>
               <li>
                 Create a subscription:
@@ -288,15 +301,15 @@ grpcurl \
                 The successful response looks like:
                 <pre>
 {
-  "id": "e8ed2e43-8e55-4765-8183-c743fb2c3612"
+  "id": "547857e3-adfc-48a5-a49e-110cfdedbaab"
 }</pre>
                 Note the created subscription id and use it further to read the messages.
               </li>
               <li>
-                Start reading the messages by the subscription:
+                Start reader stream:
                 <pre>
 grpcurl \
-  -proto cloudevent.proto \
+  -proto reader.proto \
   -max-time 86400 \
   -key client-shared-demo.awakari.cloud.key \
   -cert client-shared-demo.awakari.cloud.crt \
@@ -307,13 +320,13 @@ grpcurl \
   awakari.reader.Service/Read</pre>
                 Specify the subscription id in the request and press Enter:
                 <pre>
-{"start": {"batchSize": 1, "subId": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}}</pre>
+{"start": {"batchSize": 1, "subId": "547857e3-adfc-48a5-a49e-110cfdedbaab"}}</pre>
               </li>
               <li>
-                Switch to another shell/window to publish a message:
+                Switch to another shell/window and start the writer stream:
                 <pre>
 grpcurl \
-  -proto cloudevent.proto \
+  -proto writer.proto \
   -key client-shared-demo.awakari.cloud.key \
   -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
@@ -321,7 +334,7 @@ grpcurl \
   -d @ \
   demo.awakari.cloud:443 \
   awakari.writer.Service/SubmitMessages</pre>
-                Then send the request with a message payload:
+                Then publish a message:
                 <pre>
 {
    "msgs": [
@@ -347,12 +360,14 @@ grpcurl \
 {
   "ackCount": 1
 }</pre>
+                After this, you can close the writer stream by pressing ^C or leave it open to publish any other messages later.
               </li>
-              <li>Switch back to the window/shell where reading was started and observe the message is received</li>
+              <li>Switch back to the reader stream window/shell and observe the message is received</li>
               <li>
                 Acknowledge the received message by typing:
                 <pre>
 {"ack": { "count": 1}}</pre>
+                After this, you can close the reader stream by pressing ^C or leave it open to read any other messages later.
               </li>
               <li>
                 That's it! Delete the subscription to clean up:
