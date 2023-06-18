@@ -41,12 +41,13 @@
           <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
             <div class="navbar">
               <div class="dropdown">
-                <button class="dropbtn">Platform
+                <button class="dropbtn">Service
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
                   <a href="#about">About</a>
                   <a href="#features">Features</a>
+                  <a href="#api">API</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -102,7 +103,7 @@
             <div>
               <h1>Awakari</h1>
               <p class="ui-text-intro">
-                Cloud-native instant messaging platform.
+                Cloud-native instant messaging.
                 No more channels full of garbage.
                 Subscribe only for what is important.
                 Advertise own information.
@@ -172,6 +173,21 @@
         </div>
       </section>
 
+      <section class="ui-section-feature" id="api">
+        <div class="ui-layout-container">
+          <h2>API</h2>
+          <p class="ui-text-intro">
+            Awakari provides the following core gRPC functions:
+          </p>
+          <ul class="ui-component-list ui-component-list-feature">
+            <li class="ui-component-list--item ui-component-list--item-check">Manage Subscriptions</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Message Receiving Streams</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Message Publishing Streams</li>
+          </ul>
+          <p></p>
+        </div>
+      </section>
+
       <section class="ui-section-feature" id="solutions-use-cases">
         <div class="ui-layout-container">
           <h2>Use Cases</h2>
@@ -188,16 +204,16 @@
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Cloud</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Mutual TLS authentication</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-check">No deployment is needed</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-cross"><code>awakari.cloud:443</code> (coming soon)</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check"><code>demo.awakari.cloud:443</code> (min resources, no guarantee)</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Pre-configured news feeds</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Mutual TLS authentication</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Group/User usage quotas </li></p>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Self-Hosted</h3>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Deployment <a href="https://github.com/awakari/core#3-deployment">instructions &#10697;</a> are available</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-cross">Core functions only</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-question">Deployment <a href="https://github.com/awakari/core#3-deployment">instructions &#10697;</a> are available</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Free for a personal use</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Free for a non-commercial use</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="mailto:awakari@awakari.com">Contact us &#10697;</a> to obtain a commercial license </li></p>
             </div>
           </div>
@@ -218,7 +234,7 @@
                 <li class="ui-component-list--item ui-component-list--item-check">Valid until 2024-06-17</li>
               </ul>
               <!-- CTA -->
-              <a href="#" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Certificate</a>
+              <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Certificate</a>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
               <h3>Dedicated Limits</h3>
@@ -243,7 +259,7 @@
           <h3>Preparation Steps:</h3>
             <ol>
               <li>Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a></li>
-              <li>Download <a href="certs/ca-demo.awakari.cloud.crt">the CA file</a> for the demo instance and save it to the current directory</li>
+              <li>Download <a href="certs/ca-demo.awakari.cloud.crt">the CA file</a> for the demo instance and save it in the current directory</li>
               <li>Download <a href="certs/client-shared-demo.awakari.cloud.crt">the shared client certificate</a></li> and save it to the current directory</li>
               <li>Download <a href="certs/client-shared-demo.awakari.cloud.key">the shared client key</a></li> and save it to the current directory</li>
               <li>Download <a href="proto/cloudevent.proto">the Cloud Events proto file</a> and save it in the current directory</li>
