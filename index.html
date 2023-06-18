@@ -263,14 +263,36 @@ grpcurl \
   -d '{"subj": 2}' \
   demo.awakari.cloud:443 \
   awakari.api.limits.Service/Get</pre>
-                The successful response looks like:
+                A successful response looks like:
                 <pre>
 {
   "count": "123"
 }</pre>
                 That means that the count limit for the subject 2 (subscriptions) is 123.
-                There's also a subject 1 meaning the messages count limit those may be published.
+                There's also a subject 1 meaning the count limit for the messages those can be published.
+                The missing attribute "userId" in the response means that the limit is group-wide.
+                A group-wide limit means it's shared with other users using the same certificate.
               </li>
+            <li>
+              Next, check the current group-wide usage (skipping the "X-Awakari-User-Id" header):
+              <pre>
+grpcurl \
+  -key client-shared-demo.awakari.cloud.key \
+  -cert client-shared-demo.awakari.cloud.crt \
+  -cacert ca-demo.awakari.cloud.crt \
+  -d '{"subj": 2}' \
+  demo.awakari.cloud:443 \
+  awakari.api.permits.Service/GetUsage</pre>
+              A successful response looks like:
+            <pre>
+{
+  "count": "1",
+  "countTotal": "1",
+  "since": "2023-06-18T14:39:18.087Z"
+}</pre>
+              Meaning there's 1 subscription have been spent.
+              Hence, the remaining count of subscriptions those can be created is 123 - 1 = 122.
+            </li>
               <li>
                 Create a subscription:
                 <pre>
@@ -298,7 +320,7 @@ grpcurl \
       }
     }
 }</pre>
-                The successful response looks like:
+                A successful response looks like:
                 <pre>
 {
   "id": "547857e3-adfc-48a5-a49e-110cfdedbaab"
@@ -355,7 +377,7 @@ grpcurl \
       }
    ]
 }</pre>
-                The successful response looks like:
+                A successful response looks like:
                 <pre>
 {
   "ackCount": 1
