@@ -42,7 +42,7 @@ TABLE OF CONTENT
   |
   ------------------------------------------------------------*/
 
-  --ui-color-brand: #353535;
+  --ui-color-brand: #555555;
 
   /* COLOR PALETTE */
 
@@ -1135,10 +1135,10 @@ div label[for=ui-component-toggle__yearly] {
 }
 
 pre {
-  background: #222222;
+  background: #444;
   border: 1px solid #ddd;
   border-left: 3px solid #444444;
-  color: #bbbbbb;
+  color: #ccc;
   page-break-inside: avoid;
   font-family: monospace;
   font-size: 14px;
