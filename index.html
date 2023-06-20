@@ -320,27 +320,27 @@
         <div class="ui-layout-container">
           <h2>Quick Start</h2>
           <p>The instructions below apply to the cloud instances only. To start using self-hosted instance, follow this <a href="https://github.com/awakari/core#4-usage">link &#10697;</a>.</p>
-          <h3>Preparation Steps:</h3>
+          <h3>Preparation Steps</h3>
             <ol>
               <li>
-                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a>
+                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl &#10697;</a>
               </li>
               <li>
                 Download the shared certificate and save to the current directory:
-                <a href="certs/ca-demo.awakari.cloud.crt">CA file</a>,
-                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate</a>
-                and <a href="certs/client-shared-demo.awakari.cloud.key">client key</a>
+                <a href="certs/ca-demo.awakari.cloud.crt">CA file  &#10697;</a>,
+                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate &#10697;</a>
+                and <a href="certs/client-shared-demo.awakari.cloud.key">client key &#10697;</a>
               </li>
               <li>
                 Download the necessary proto files and save to the current directory:
-                <a href="proto/cloudevent.proto">Cloud Events</a>,
-                <a href="proto/reader.proto">Reader</a>
-                and <a href="proto/writer.proto">Writer</a>.
+                <a href="proto/cloudevent.proto">Cloud Events &#10697;</a>,
+                <a href="proto/reader.proto">Reader &#10697;</a>
+                and <a href="proto/writer.proto">Writer &#10697;</a>.
               </li>
             </ol>
-          <h3>Basic Usage Walkthrough:</h3>
+          <h3>Basic Usage Walkthrough</h3>
           <ol>
-              <li>
+              <li style="padding-bottom: 1.5rem">
                 Check access:
                 <pre>
 grpcurl \
@@ -356,12 +356,11 @@ grpcurl \
 {
   "count": "123"
 }</pre>
-                That means that the count limit for the subject 2 (subscriptions) is 123.
-                There's also a subject 1 meaning the count limit for the messages those can be published.
                 The missing attribute "userId" in the response means that the limit is group-wide.
                 A group-wide limit means it's shared with other users using the same certificate.
+                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subject/subject.proto">subject options &#10697;</a>.</p>
               </li>
-            <li>
+            <li style="padding-bottom: 1.5rem">
               Next, check the current group-wide usage (skipping the "X-Awakari-User-Id" header):
               <pre>
 grpcurl \
@@ -381,7 +380,7 @@ grpcurl \
               Meaning there's 1 subscription have been spent.
               Hence, the remaining count of subscriptions those can be created is 123 - 1 = 122.
             </li>
-              <li>
+              <li style="padding-bottom: 1.5rem">
                 Create a subscription:
                 <pre>
 grpcurl \
@@ -414,8 +413,9 @@ grpcurl \
   "id": "547857e3-adfc-48a5-a49e-110cfdedbaab"
 }</pre>
                 Note the created subscription id and use it further to read the messages.
+                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subscriptions/service.proto">Subscriptions API &#10697;</a>.</p>
               </li>
-              <li>
+              <li style="padding-bottom: 1.5rem">
                 Start reader stream:
                 <pre>
 grpcurl \
@@ -432,7 +432,7 @@ grpcurl \
                 <pre>
 {"start": {"batchSize": 1, "subId": "547857e3-adfc-48a5-a49e-110cfdedbaab"}}</pre>
               </li>
-              <li>
+              <li style="padding-bottom: 1.5rem">
                 Switch to another shell/window and start the writer stream:
                 <pre>
 grpcurl \
@@ -472,14 +472,14 @@ grpcurl \
 }</pre>
                 After this, you can close the writer stream by pressing ^C or leave it open to publish any other messages later.
               </li>
-              <li>Switch back to the reader stream window/shell and observe the message is received</li>
-              <li>
+              <li style="padding-bottom: 1.5rem">Switch back to the reader stream window/shell and observe the message is received</li>
+              <li style="padding-bottom: 1.5rem">
                 Acknowledge the received message by typing:
                 <pre>
 {"ack": { "count": 1}}</pre>
                 After this, you can close the reader stream by pressing ^C or leave it open to read any other messages later.
               </li>
-              <li>
+              <li style="padding-bottom: 1.5rem">
                 That's it! Delete the subscription to clean up:
                 <pre>
 grpcurl \
@@ -487,7 +487,7 @@ grpcurl \
   -cert client-shared-demo.awakari.cloud.crt \
   -cacert ca-demo.awakari.cloud.crt \
   -H 'X-Awakari-User-Id: john.doe' \
-  -d '{"id": "e8ed2e43-8e55-4765-8183-c743fb2c3612"}'
+  -d '{"id": "547857e3-adfc-48a5-a49e-110cfdedbaab"}'
   demo.awakari.cloud:443 \
   awakari.subscriptions.Service/Delete</pre>
               </li>
