@@ -146,23 +146,23 @@
             <p>Receive new messages timely. Exactly-Once delivery.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Messages</li>
             <p>Define custom message matching conditions:</p>
-            <div class="ui-layout-grid ui-layout-grid-2" style="padding-left: 1rem">
+            <div class="ui-layout-grid ui-layout-grid-2" style="padding-left: 2.5rem">
               <div>
-                <div>
+                <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Arbitrary Attributes</li>
                   <p>Specify custom keys to match: <i>category, location, ...</i></p>
                 </div>
-                <div>
+                <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Pattern Matching</li>
                   <p>For example <code><b>*el?ow</b></code> will match: <i>yellow, elbow, ...</i></p>
                 </div>
               </div>
               <div>
-                <div>
+                <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Composite Conditions</li>
                   <p>Groups of nested conditions and groups</p>
                 </div>
-                <div>
+                <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Logic Functions</li>
                   <p><i>And, Or, Xor, Not</i></p>
                 </div>
@@ -250,7 +250,7 @@
                   <td>
                     <ul class="ui-component-list ui-component-list-feature">
                       <li class="ui-component-list--item ui-component-list--item-check">Messengers and Social Networks</li>
-                      <li class="ui-component-list--item ui-component-list--item-check">Leverage ML to label data</li>
+                      <li class="ui-component-list--item ui-component-list--item-check">Leverage ML to label an input data</li>
                       <li class="ui-component-list--item ui-component-list--item-check">Feed from custom data sources</li>
                     </ul>
                   </td>
@@ -322,13 +322,21 @@
           <p>The instructions below apply to the cloud instances only. To start using self-hosted instance, follow this <a href="https://github.com/awakari/core#4-usage">link &#10697;</a>.</p>
           <h3>Preparation Steps:</h3>
             <ol>
-              <li>Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a></li>
-              <li>Download <a href="certs/ca-demo.awakari.cloud.crt">the CA file</a> for the demo instance and save it in the current directory</li>
-              <li>Download <a href="certs/client-shared-demo.awakari.cloud.crt">the shared client certificate</a></li> and save it to the current directory</li>
-              <li>Download <a href="certs/client-shared-demo.awakari.cloud.key">the shared client key</a></li> and save it to the current directory</li>
-              <li>Download <a href="proto/cloudevent.proto">the Cloud Events proto file</a> and save it in the current directory</li>
-              <li>Download <a href="proto/reader.proto">the Reader service proto file</a> and save it in the current directory</li>
-              <li>Download <a href="proto/writer.proto">the Writer service proto file</a> and save it in the current directory</li>
+              <li>
+                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a>
+              </li>
+              <li>
+                Download the shared certificate and save to the current directory:
+                <a href="certs/ca-demo.awakari.cloud.crt">CA file</a>,
+                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate</a>
+                and <a href="certs/client-shared-demo.awakari.cloud.key">client key</a>
+              </li>
+              <li>
+                Download the necessary proto files and save to the current directory:
+                <a href="proto/cloudevent.proto">Cloud Events</a>,
+                <a href="proto/reader.proto">Reader</a>
+                and <a href="proto/writer.proto">Writer</a>.
+              </li>
             </ol>
           <h3>Basic Usage Walkthrough:</h3>
           <ol>
