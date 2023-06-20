@@ -47,7 +47,7 @@
                 <div class="dropdown-content">
                   <a href="#about">About</a>
                   <a href="#features">Features</a>
-                  <a href="#api">API</a>
+                  <a href="#concepts">Concepts</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -128,11 +128,6 @@
             It allows users to publish their messages to the common stream.
             Other users decide, what they want to receive.
           </p>
-          <p>Awakari works with:</p>
-          <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">Streams of <a href="https://cloudevents.io">Cloud Events &#10697;</a>.</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Subscriptions with sets of matching conditions.</li>
-          </ul>
         </div>
       </section>
 
@@ -141,7 +136,7 @@
           <h2>Features</h2>
           <div>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Broadcasting</li>
-            <p>To not to miss any important info, messages are being published to a common stream.</p>
+            <p>Publish info, everyone interested in it will receive it.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Instant Push Notifications</li>
             <p>Receive new messages timely. Exactly-Once delivery.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Messages</li>
@@ -172,14 +167,19 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="api">
+      <section class="ui-section-feature" id="concepts">
         <div class="ui-layout-container">
-          <h2>API</h2>
-          <p class="ui-text-intro">Awakari provides the following core gRPC functions:</p>
+          <h2>Concepts</h2>
+          <h3>Works with</h3>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Manage Subscriptions</li>
-            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Receive Messages from a Stream</li>
-            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Publish Messages to a Stream</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Streams of <a href="https://cloudevents.io">Cloud Events &#10697;</a>.</li>
+            <li class="ui-component-list--item ui-component-list--item-check"><a href="https://github.com/awakari/subscriptions#122-subscription">Subscriptions &#10697;</a> with sets of <a href="https://github.com/awakari/subscriptions#121-condition">matching conditions &#10697;</a>.</li>
+          </ul>
+          <h3>Core API gRPC functions</h3>
+          <ul class="ui-component-list ui-component-list-feature">
+            <li class="ui-component-list--item ui-component-list--item-check">Manage Subscriptions</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Receive Messages (Streaming)</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Publish Messages (Streaming)</li>
           </ul>
         </div>
       </section>
