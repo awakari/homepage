@@ -125,10 +125,6 @@
             It allows users to publish their messages to the common stream.
             Other users decide, what they want to receive.
           </p>
-          <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">Instant Notifications</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Relevant Only Messages</li>
-          </ul>
           <p>Awakari works with:</p>
           <ul class="ui-component-list ui-component-list-feature">
             <li class="ui-component-list--item ui-component-list--item-check">Streams of messages in the <a href="https://cloudevents.io">Cloud Events &#10697;</a> format.</li>
@@ -141,28 +137,29 @@
         <div class="ui-layout-container">
           <h2>Features</h2>
           <div>
-            <li class="ui-component-list--item ui-component-list--item-check"><h3>Instant Notifications</h3></li>
-            <p>Get notified about the new messages timely.</p>
-            <li class="ui-component-list--item ui-component-list--item-check"><h3>Relevant Only Messages</h3></li>
-            <p>Subscribe using custom message matching conditions.</p>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Broadcasting</li>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Instant Push Notifications</li>
+            <p>Receive new messages timely. Exactly-Once delivery.</p>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Messages</li>
+            <p>Define custom message matching conditions:</p>
             <div class="ui-component-card ui-component-card--pricing ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
               <div>
                 <div>
-                  <li class="ui-component-list--item ui-component-list--item-check"><h4>Arbitrary Attributes</h4></li>
+                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Arbitrary Attributes</li>
                   <p>Specify custom keys to match: <i>category, location, ...</i></p>
                 </div>
                 <div>
-                  <li class="ui-component-list--item ui-component-list--item-check"><h4>Pattern Matching</h4></li>
+                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Pattern Matching</li>
                   <p>For example <code><b>*el?ow</b></code> will match: <i>yellow, elbow, ...</i></p>
                 </div>
               </div>
               <div>
                 <div>
-                  <li class="ui-component-list--item ui-component-list--item-check"><h4>Composite Conditions</h4></li>
+                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Composite Conditions</li>
                   <p>Groups of nested conditions and groups</p>
                 </div>
                 <div>
-                  <li class="ui-component-list--item ui-component-list--item-check"><h4>Logic Functions</h4></li>
+                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Logic Functions</li>
                   <p><i>And, Or, Xor, Not</i></p>
                 </div>
               </div>
@@ -176,9 +173,9 @@
           <h2>API</h2>
           <p>Awakari provides the following core gRPC functions to work:</p>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">Manage Subscriptions</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Message Receiving Streams</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Message Publishing Streams</li>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Manage Subscriptions</li>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Receive Messages from a Stream</li>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Publish Messages to a Stream</li>
           </ul>
         </div>
       </section>
@@ -186,14 +183,20 @@
       <section class="ui-section-feature" id="solutions-use-cases">
         <div class="ui-layout-container">
           <h2>Use Cases</h2>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Receive Notifications</li></h3>
-          <p>Subscribe for important info - Awakari will push notifications about relevant messages.</p>
-          <p>Latest news and updates from any source.</p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Broadcast</li></h3>
-          <p>Publish own information - <b>everyone who interested will receive</b> it.</p>
-          <h3><li class="ui-component-list--item ui-component-list--item-check">Integrate</li></h3>
-          <p>Publish and receive messages using RSS feeds, Chat Bots or message queues.</p>
-          <p>Use <b>Machine Learning</b> algorithms to classify and label the image, audio or video data when publish.</p>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-3">
+            <div class="ui-component-card ui-component-card--pricing">
+              <img src="insight-icon.svg" width="128" height="128"/>
+              <center><p class="ui-text-intro">Real-Time Insights</p></center>
+            </div>
+            <div class="ui-component-card ui-component-card--pricing">
+              <img src="target-icon.svg" width="128" height="128"/>
+              <center><p class="ui-text-intro">Customers Targeting</p></center>
+            </div>
+            <div class="ui-component-card ui-component-card--pricing">
+              <img src="communities-social-networking-icon.svg" width="128" height="128"/>
+              <center><p class="ui-text-intro">Social Networking</p></center>
+            </div>
+          </div>
         </div>
       </section>
 
