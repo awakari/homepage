@@ -103,7 +103,7 @@
             <div>
               <h1>Awakari</h1>
               <p class="ui-text-intro">
-                Receive relevant only messages. Broadcast to everyone.
+                Subscribe for real-time search results.
               </p>
               <div class="ui-component-cta ui-layout-flex">
                 <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
@@ -118,15 +118,10 @@
       <section class="ui-section-feature" id="about">
         <div class="ui-layout-container">
           <h2>About</h2>
-          <p>Awakari is a messaging pub/sub service.</p>
+          <p>Awakari is a messaging pub/sub service with the continuous search capability.</p>
           <p>
-            In the modern world of information streams its getting harder to find what is important timely.
-            Conventional search engines, social networks and messengers doesn't solve this problem.
-          </p>
-          <p>
-            Awakari offers comprehensive subscriptions to catch the relevant messages.
-            It allows users to publish their messages to the common stream.
-            Other users decide, what they want to receive.
+            It allows users to publish messages to the common stream.
+            Also, users decide, what notifications they want to receive.
           </p>
         </div>
       </section>
@@ -136,8 +131,8 @@
           <h2>Features</h2>
           <div>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Broadcasting</li>
-            <p>Publish info, everyone interested in it will receive it.</p>
-            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Instant Push Notifications</li>
+            <p>Publish info, everyone who interested in it will receive it.</p>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Real-Time Push Notifications</li>
             <p>Receive new messages timely. Exactly-Once delivery.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Messages</li>
             <p>Define custom message matching conditions:</p>
@@ -145,11 +140,11 @@
               <div>
                 <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Arbitrary Attributes</li>
-                  <p>Specify custom keys to match: <i>category, location, ...</i></p>
+                  <p>Specify custom message keys to match: <i>category, location, ...</i></p>
                 </div>
                 <div style="padding-bottom: 0.5rem">
-                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Pattern Matching</li>
-                  <p>For example <code><b>*el?ow</b></code> will match: <i>yellow, elbow, ...</i></p>
+                  <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Full-Text Search</li>
+                  <p>Specify text search terms to match</p>
                 </div>
               </div>
               <div>
@@ -400,10 +395,10 @@ grpcurl \
    },
    "cond": {
       "not": false,
-      "ktc": {
+      "tc": {
         "key": "subject",
         "pattern": "Kenobi",
-        "partial": true
+        "exact": true
       }
     }
 }</pre>
