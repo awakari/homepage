@@ -103,7 +103,7 @@
             <div>
               <h1>Awakari</h1>
               <p class="ui-text-intro">
-                Subscribe for real-time search results.
+                Real-time events search
               </p>
               <div class="ui-component-cta ui-layout-flex">
                 <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
@@ -118,10 +118,11 @@
       <section class="ui-section-feature" id="about">
         <div class="ui-layout-container">
           <h2>About</h2>
-          <p>Awakari is a messaging pub/sub service with the continuous search capability.</p>
+          <p>Awakari is an event-driven publish/subscribe system.</p>
           <p>
-            It allows users to publish messages to the common stream.
-            Also, users decide, what notifications they want to receive.
+            Publish events to the common stream.
+            Define comprehensive search conditions as a subscription.
+            Awakari will push the relevant events as notifications.
           </p>
         </div>
       </section>
@@ -133,14 +134,14 @@
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Broadcasting</li>
             <p>Publish info, everyone who interested in it will receive it.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Real-Time Push Notifications</li>
-            <p>Receive new messages timely. Exactly-Once delivery.</p>
-            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Messages</li>
-            <p>Define custom message matching conditions:</p>
+            <p>Receive new events timely and exactly once.</p>
+            <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Only Events</li>
+            <p>Define custom event matching conditions:</p>
             <div class="ui-layout-grid ui-layout-grid-2" style="padding-left: 2.5rem">
               <div>
                 <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Arbitrary Attributes</li>
-                  <p>Specify custom message keys to match: <i>category, location, ...</i></p>
+                  <p>Specify custom event keys to match: <i>category, location, ...</i></p>
                 </div>
                 <div style="padding-bottom: 0.5rem">
                   <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Full-Text Search</li>
@@ -173,8 +174,8 @@
           <h3>Core API gRPC functions</h3>
           <ul class="ui-component-list ui-component-list-feature">
             <li class="ui-component-list--item ui-component-list--item-check">Manage Subscriptions</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Receive Messages (Streaming)</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Publish Messages (Streaming)</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Receive Events (Streaming)</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Publish Events (Streaming)</li>
           </ul>
         </div>
       </section>
@@ -439,7 +440,7 @@ grpcurl \
   -d @ \
   demo.awakari.cloud:443 \
   awakari.writer.Service/SubmitMessages</pre>
-                Then publish a message:
+                Then publish an event:
                 <pre>
 {
    "msgs": [
