@@ -102,9 +102,8 @@
           <div class="ui-section-hero__layout ui-layout-grid ui-layout-grid-2">
             <div>
               <h1>Awakari</h1>
-              <p class="ui-text-intro">
-                Real-time events search
-              </p>
+              <p class="ui-text-intro">Real-time events search.</p>
+              <p>For faster decisions.</p>
               <div class="ui-component-cta ui-layout-flex">
                 <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Start for Free</a>
               </div>
@@ -120,9 +119,17 @@
           <h2>About</h2>
           <p>Awakari is an event-driven publish/subscribe system.</p>
           <p>
-            Publish events to the common stream.
-            Define comprehensive search conditions as a subscription.
-            Awakari will push the relevant events as notifications.
+            Conventional search is used to find matching data by a query.
+            In the world of real-time event streams the problem is reverse.
+            It's necessary to <b>find all matching queries by an event</b>.
+            Awakari leverages the inverse search (percolation) to solve this.
+            Every incoming event is used to find all interested subscribers.
+          </p>
+          <p>
+            The closest analogue is <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html">Elasticsearch Percolation Query</a>.
+            Awakari comes with additional <b>push notifications</b> capability.
+            It's crucial for receiving the updates immediately.
+            Moreover, pushing eliminates the need to periodically repeat the request for updates.
           </p>
         </div>
       </section>
@@ -132,11 +139,11 @@
           <h2>Features</h2>
           <div>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Broadcasting</li>
-            <p>Publish info, everyone who interested in it will receive it.</p>
+            <p>Publish info for everyone who expresses the interest in this.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Push Notifications</li>
-            <p>Receive new events timely and exactly once.</p>
+            <p>Receive updates timely and exactly once.</p>
             <li class="ui-component-list--item ui-component-list--item-check ui-text-intro">Relevant Events</li>
-            <p>Define custom event matching conditions:</p>
+            <p>Define comprehensive event matching conditions:</p>
             <div class="ui-layout-grid ui-layout-grid-2" style="padding-left: 2.5rem">
               <div>
                 <div style="padding-bottom: 0.5rem">
@@ -166,16 +173,19 @@
       <section class="ui-section-feature" id="concepts">
         <div class="ui-layout-container">
           <h2>Concepts</h2>
-          <h3>Works with</h3>
+          <h3>Event</h3>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">Streams of <a href="https://cloudevents.io">Cloud Events &#10697;</a>.</li>
-            <li class="ui-component-list--item ui-component-list--item-check"><a href="https://github.com/awakari/subscriptions#122-subscription">Subscriptions &#10697;</a> with sets of <a href="https://github.com/awakari/subscriptions#121-condition">matching conditions &#10697;</a>.</li>
+            <li class="ui-component-list--item ui-component-list--item-check">In the <a href="https://cloudevents.io/">CloudEvents &#10697;</a> standard format</li>
           </ul>
-          <h3>Core API gRPC functions</h3>
+          <h3>Subscription</h3>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">Manage Subscriptions</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Receive Events (Streaming)</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Publish Events (Streaming)</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Works like a "Saved Search Query"</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Contains event <a href="https://github.com/awakari/subscriptions#121-condition">matching conditions &#10697;</a></li>
+          </ul>
+          <h3>Event Stream</h3>
+          <ul class="ui-component-list ui-component-list-feature">
+            <li class="ui-component-list--item ui-component-list--item-check">Publish</li>
+            <li class="ui-component-list--item ui-component-list--item-check">Receive by Subscription</li>
           </ul>
         </div>
       </section>
@@ -194,6 +204,7 @@
                   <td></td>
                   <td>
                     <ul class="ui-component-list ui-component-list-feature">
+                      <li class="ui-component-list--item ui-component-list--item-check">Monitoring and Alerting</li>
                       <li class="ui-component-list--item ui-component-list--item-check">Investments</li>
                       <li class="ui-component-list--item ui-component-list--item-check">Media</li>
                     </ul>
@@ -212,6 +223,7 @@
                   <td>
                     <ul class="ui-component-list ui-component-list-feature">
                       <li class="ui-component-list--item ui-component-list--item-check">Advertising</li>
+                      <li class="ui-component-list--item ui-component-list--item-check">Analytics</li>
                       <li class="ui-component-list--item ui-component-list--item-check">Marketing</li>
                     </ul>
                   </td>
@@ -222,7 +234,7 @@
               <table>
                 <tr>
                   <td><img src="share-icon.svg" alt="Share Publications"/></td>
-                  <td><p class="ui-text-intro">&nbsp;&nbsp;Share Publications</p></td>
+                  <td><p class="ui-text-intro">&nbsp;&nbsp;Sharing Publications</p></td>
                 </tr>
                 <tr>
                   <td></td>
@@ -240,13 +252,13 @@
               <table>
                 <tr>
                   <td><img src="cloud-services-icon.svg" alt="Integrate"/></td>
-                  <td><p class="ui-text-intro">&nbsp;&nbsp;Integrate</p></td>
+                  <td><p class="ui-text-intro">&nbsp;&nbsp;Integrations</p></td>
                 <tr>
                   <td></td>
                   <td>
                     <ul class="ui-component-list ui-component-list-feature">
                       <li class="ui-component-list--item ui-component-list--item-check">Messengers and Social Networks</li>
-                      <li class="ui-component-list--item ui-component-list--item-check">Leverage ML to label an input data</li>
+                      <li class="ui-component-list--item ui-component-list--item-check">Leverage ML to label any input data</li>
                       <li class="ui-component-list--item ui-component-list--item-check">Feed from custom data sources</li>
                     </ul>
                   </td>
@@ -390,16 +402,14 @@ grpcurl \
                 Insert the subscription input data and press ^D:
                 <pre>
 {
-   "md": {
-      "description": "John Doe's test subscription 0",
-      "enabled": true
-   },
+   "description": "Tesla model S updates",
+   "enabled": true,
    "cond": {
       "not": false,
       "tc": {
-        "key": "subject",
-        "pattern": "Kenobi",
-        "exact": true
+        "key": "",
+        "pattern": "Tesla Model S",
+        "exact": false
       }
     }
 }</pre>
@@ -451,13 +461,13 @@ grpcurl \
          "spec_version": "1.0",
          "attributes": {
             "subject": {
-               "ce_string": "Obi-Wan Kenobi"
+               "ce_string": "Tesla price updates"
             },
             "time": {
-               "ce_timestamp": "1985-04-12T23:20:50.52Z"
+               "ce_timestamp": "2023-07-03T23:20:50.52Z"
             }
          },
-         "text_data": "I felt a great disturbance in the force"
+         "text_data": "Tesla model S is now available at lower price"
       }
    ]
 }</pre>
