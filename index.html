@@ -209,16 +209,18 @@
               </ul>
             </div>
             <div>
-              <p class="ui-text-intro">How does Inverse Search reduces costs?</p>
+              <p class="ui-text-intro">How does Inverse Search reduce costs?</p>
               <p>Given: K input events per second, N registered queries.</p>
               <p>
                 In conventional stream data processing, every incoming event is processed by every registered query.
                 Hence, the resulting load may be estimated as <b>K * N</b>.
+                For example, AWS Kinesis Data Analytics <a href="https://aws.amazon.com/kinesis/data-analytics/pricing/">charges per KPU &#10697;</a>
+                that is in direct ratio to the load.
               </p>
               <p>
                 In case of Inverse Search, the search is executed once for every incoming event.
                 The Inverse Search itself uses the index, hence the every search operation complexity is O(log(N)).
-                Hence, the resulting load is <b>K * log(N)</b>.
+                The resulting load is <b>K * log(N)</b>.
               </p>
             </div>
             <div>
