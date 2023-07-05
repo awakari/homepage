@@ -47,6 +47,7 @@
                 <div class="dropdown-content">
                   <a href="#about">About</a>
                   <a href="#features">Features</a>
+                  <a href="#comparison">Comparison</a>
                   <a href="#concepts">Concepts</a>
                 </div>
               </div>
@@ -56,7 +57,7 @@
                 </button>
                 <div class="dropdown-content">
                   <a href="#solutions-use-cases">Use Cases</a>
-                  <a href="#solutions-hosting">Hosting</a>
+                  <a href="#solutions-variants">Variants</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -74,9 +75,8 @@
                 <div class="dropdown-content">
                   <div class="dropdown">
                     <a href="#resources-quick-start">Quick Start</a>
-                    <a href="https://github.com/awakari/client-sdk-go">Using Client SDK &#10697;</a>
-                    <a href="https://github.com/awakari">GitHub &#10697;</a>
-                    <a href="https://t.me/awakari">Telegram &#10697;</a>
+                    <a href="https://github.com/awakari/client-sdk-go">Using Client SDK &#129109;</a>
+                    <a href="https://t.me/awakari">Telegram &#129109;</a>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@
                 </button>
                 <div class="dropdown-content">
                   <div class="dropdown">
-                    <a href="mailto:awakari@awakari.com">Email &#10697;</a>
+                    <a href="mailto:awakari@awakari.com">Email &#129109;</a>
                   </div>
                 </div>
               </div>
@@ -118,18 +118,36 @@
         <div class="ui-layout-container">
           <h2>About</h2>
           <p>Awakari is a service that combines publish/subscribe capability with real-time search.</p>
-          <p>
-            For every incoming event, it resolves who is interested in an incoming event and then pushes it to the receiver immediately.
-          </p>
-          <p>
-          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
-            <div class="ui-component-card ui-component-card--pricing">
+          <div class="ui-layout-grid ui-layout-grid-2">
+            <div>
+              <h3>How it works</h3>
+              <p>Awakari is capable to consume event streams from any source.</p>
+              <p>A user expresses their interest as a subscription with a certain search criteria.</p>
+              <p>For every incoming event, Awakari does the following:</p>
+              <ul>
+                <li class="ui-component-list--item ui-component-list--item-check">Resolves matching subscriptions</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Notifies the online user immediately</li>
+              </ul>
+              <p>A user is also able to publish own events to Awakari.</p>
+            </div>
+            <div>
+              <img src="how-it-works.png" alt="figure: how it works"/>
+            </div>
+          </div>
+          <div class="ui-layout-grid ui-layout-grid-2">
+            <div>
+              <h3>Why Awakari</h3>
+              <p>Faster relevant data access means more value gain:</p>
+              <ul>
+                <li class="ui-component-list--item ui-component-list--item-check"><a href="https://arxiv.org/abs/2203.09118">Machine Learning &#129109;</a></li>
+                <li class="ui-component-list--item ui-component-list--item-check"><a href="https://www.brcommunity.com/articles.php?id=b373">Decision Making &#129109;</a></li>
+                <li class="ui-component-list--item ui-component-list--item-check"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1353485815300374">Threat Detection &#129109;</a></li>
+              </ul>
+            </div>
+            <div>
               <img src="data-value-vs-time.png" alt="figure: data value vs time"/>
             </div>
-            <div class="ui-component-card ui-component-card--pricing">
-              <img src="chart-0.png" alt="figure: inputs and outputs"/>
-            </div>
-          </p>
+          </div>
         </div>
       </section>
 
@@ -169,17 +187,72 @@
         </div>
       </section>
 
+      <section class="ui-section-feature" id="comparison">
+        <div class="ui-layout-container">
+          <h2>Comparison</h2>
+          <table>
+            <thead>
+              <tr>
+                <td rowspan="2"><p class="ui-text-intro"><b>Criteria</b></p></td>
+                <td colspan="3"><p class="ui-text-intro"><b>Solution</b></p></td>
+                <td rowspan="2"><p class="ui-text-intro"><b>Explanation</b></p></td>
+              </tr>
+              <tr>
+                <td><p class="ui-text-intro">Awakari</p></td>
+                <td><p class="ui-text-intro">Elasticsearch</p></td>
+                <td><p class="ui-text-intro">Amazon Kinesis</p></td>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="headCol">
+                <p class="ui-text-intro">Inverse Search</p>
+              </td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
+              <td>
+                <p>Required to support large number of user queries.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="headCol">
+                <p class="ui-text-intro">Delivery Way</p>
+              </td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Push</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-cross">Pull</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Push</li></td>
+              <td>
+                <p>Push is important for both low latency and avoiding the resource wasting in poll loops.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="headCol">
+                <p class="ui-text-intro">Aggregation</p>
+              </td>
+              <td><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
+              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
+              <td>
+                <p>Required for complex processing and analytics.</p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="ui-section-feature" id="concepts">
         <div class="ui-layout-container">
           <h2>Concepts</h2>
           <h3>Event</h3>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">In the <a href="https://cloudevents.io/">CloudEvents &#10697;</a> standard format</li>
+            <li class="ui-component-list--item ui-component-list--item-check">In the <a href="https://cloudevents.io/">CloudEvents &#129109;</a> standard format</li>
           </ul>
           <h3>Subscription</h3>
           <ul class="ui-component-list ui-component-list-feature">
             <li class="ui-component-list--item ui-component-list--item-check">Works like a "Saved Search Query"</li>
-            <li class="ui-component-list--item ui-component-list--item-check">Contains event <a href="https://github.com/awakari/subscriptions#121-condition">matching conditions &#10697;</a></li>
+            <li class="ui-component-list--item ui-component-list--item-check">Contains event matching conditions</li>
           </ul>
           <h3>Event Stream</h3>
           <ul class="ui-component-list ui-component-list-feature">
@@ -269,23 +342,23 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="solutions-hosting">
+      <section class="ui-section-feature" id="solutions-variants">
         <div class="ui-layout-container">
-          <h2>Hosting</h2>
+          <h2>Variants</h2>
+          <p>Awakari is a managed service.</p>
+          <p>To secure user data, any interaction always use encrypted channels and mutual TLS authentication.</p>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Cloud</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-check">No deployment is needed</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Pre-configured news feeds</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Mutual TLS authentication</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Group/User usage quotas </li></p>
+              <h3>Public</h3>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Ready to use event sources</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Shared event stream</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check"><a href="#pricing-free-usage">Free usage</a> available</li></p>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Self-Hosted</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Deployment <a href="https://github.com/awakari/core#3-deployment">instructions &#10697;</a> are available</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-cross">Core functions only</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Free for a non-commercial use</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="mailto:awakari@awakari.com">Contact us &#10697;</a> to obtain a commercial license </li></p>
+              <h3>Private</h3>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Restrict data access</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Dedicated event stream</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="mailto:awakari@awakari.com">Contact us &#129109;</a> to get a private instance</li></p>
             </div>
           </div>
         </div>
@@ -326,23 +399,22 @@
       <section class="ui-section-feature" id="resources-quick-start">
         <div class="ui-layout-container">
           <h2>Quick Start</h2>
-          <p>The instructions below apply to the cloud instances only. To start using self-hosted instance, follow this <a href="https://github.com/awakari/core#4-usage">link &#10697;</a>.</p>
           <h3>Preparation Steps</h3>
             <ol>
               <li>
-                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl &#10697;</a>
+                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl &#129109;</a>
               </li>
               <li>
                 Download the shared certificate and save to the current directory:
-                <a href="certs/ca-demo.awakari.cloud.crt">CA file  &#10697;</a>,
-                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate &#10697;</a>
-                and <a href="certs/client-shared-demo.awakari.cloud.key">client key &#10697;</a>
+                <a href="certs/ca-demo.awakari.cloud.crt">CA file  &#129109;</a>,
+                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate &#129109;</a>
+                and <a href="certs/client-shared-demo.awakari.cloud.key">client key &#129109;</a>
               </li>
               <li>
                 Download the necessary proto files and save to the current directory:
-                <a href="proto/cloudevent.proto">Cloud Events &#10697;</a>,
-                <a href="proto/reader.proto">Reader &#10697;</a>
-                and <a href="proto/writer.proto">Writer &#10697;</a>.
+                <a href="proto/cloudevent.proto">Cloud Events &#129109;</a>,
+                <a href="proto/reader.proto">Reader &#129109;</a>
+                and <a href="proto/writer.proto">Writer &#129109;</a>.
               </li>
             </ol>
           <h3>Basic Usage Walkthrough</h3>
@@ -365,7 +437,7 @@ grpcurl \
 }</pre>
                 The missing attribute "userId" in the response means that the limit is group-wide.
                 A group-wide limit means it's shared with other users using the same certificate.
-                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subject/subject.proto">subject options &#10697;</a>.</p>
+                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subject/subject.proto">subject options &#129109;</a>.</p>
               </li>
             <li style="padding-bottom: 1.5rem">
               Next, check the current group-wide usage (skipping the "X-Awakari-User-Id" header):
@@ -418,7 +490,7 @@ grpcurl \
   "id": "547857e3-adfc-48a5-a49e-110cfdedbaab"
 }</pre>
                 Note the created subscription id and use it further to read the messages.
-                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subscriptions/service.proto">Subscriptions API &#10697;</a>.</p>
+                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subscriptions/service.proto">Subscriptions API &#129109;</a>.</p>
               </li>
               <li style="padding-bottom: 1.5rem">
                 Start reader stream:
@@ -503,7 +575,7 @@ grpcurl \
       <section class="ui-section-feature" id="get-dedicated-cloud-certificate">
         <div class="ui-layout-container">
           <h2>Get Dedicated Cloud Certificate</h2>
-          <p>Please send a request <a href="mailto:awakari@awakari.com">email &#10697;</a> to get the certificate.</p>
+          <p>Please send a request <a href="mailto:awakari@awakari.com">email &#129109;</a> to get the certificate.</p>
           <p>The requested certificate will be in the response email.</p>
 
           <!-- TODO google auth when client cert issuing is automated -->

@@ -1164,3 +1164,17 @@ pre {
   align-items: center;
   gap: 8px;
 }
+
+td {
+  padding: 1rem;
+}
+
+td.headCol {
+  text-align: right;
+  white-space: nowrap;
+}
+
+thead td {
+  text-align: center;
+  white-space: nowrap;
+}
