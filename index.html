@@ -190,55 +190,25 @@
       <section class="ui-section-feature" id="comparison">
         <div class="ui-layout-container">
           <h2>Comparison</h2>
-          <table>
-            <thead>
-              <tr>
-                <td rowspan="2"><p class="ui-text-intro"><b>Criteria</b></p></td>
-                <td colspan="3"><p class="ui-text-intro"><b>Solution</b></p></td>
-                <td rowspan="2"><p class="ui-text-intro"><b>Explanation</b></p></td>
-              </tr>
-              <tr>
-                <td><p class="ui-text-intro">Awakari</p></td>
-                <td><p class="ui-text-intro">Elasticsearch</p></td>
-                <td><p class="ui-text-intro">Amazon Kinesis</p></td>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="headCol">
-                <p class="ui-text-intro">Inverse Search</p>
-              </td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
-              <td>
-                <p>Required to support large number of user queries.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="headCol">
-                <p class="ui-text-intro">Delivery Way</p>
-              </td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Push</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-cross">Pull</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Push</li></td>
-              <td>
-                <p>Push is important for both low latency and avoiding the resource wasting in poll loops.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="headCol">
-                <p class="ui-text-intro">Aggregation</p>
-              </td>
-              <td><li class="ui-component-list--item ui-component-list--item-cross">No</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-              <td><li class="ui-component-list--item ui-component-list--item-check">Yes</li></td>
-              <td>
-                <p>Required for complex processing and analytics.</p>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div>
+              <img src="comparison.png" alt="comparison"/>
+            </div>
+            <div>
+              <h3>Event Driven</h3>
+              <ul>
+                <li class="ui-component-list--item ui-component-list--item-check">Push notifications reduce the latency.</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Avoids resource wasting in repeated dry polls.</li>
+              </ul>
+              <h3>Inverse Search</h3>
+              <ul>
+                <li class="ui-component-list--item ui-component-list--item-check">Finds queries by incoming event.</li>
+                <li class="ui-component-list--item ui-component-list--item-check">
+                  Avoids resource wasting in running every query for every incoming event.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
