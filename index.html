@@ -131,7 +131,7 @@
               <p>A user is also able to publish own events to Awakari.</p>
             </div>
             <div>
-              <img src="how-it-works.png" alt="figure: how it works"/>
+              <img src="how-it-works.svg" alt="figure: how it works"/>
             </div>
           </div>
           <div class="ui-layout-grid ui-layout-grid-2">
@@ -145,7 +145,7 @@
               </ul>
             </div>
             <div>
-              <img src="data-value-vs-time.png" alt="figure: data value vs time"/>
+              <img src="data-value-vs-time.svg" alt="figure: data value vs time"/>
             </div>
           </div>
         </div>
@@ -192,21 +192,37 @@
           <h2>Comparison</h2>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div>
-              <img src="comparison.png" alt="comparison"/>
+              <img src="comparison.svg" alt="comparison"/>
             </div>
             <div>
               <h3>Event Driven</h3>
               <ul>
                 <li class="ui-component-list--item ui-component-list--item-check">Push notifications reduce the latency.</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Avoids resource wasting in repeated dry polls.</li>
+                <li class="ui-component-list--item ui-component-list--item-check"><a href="https://dev.to/anubhavitis/push-vs-pull-api-architecture-1djo">Avoids repeated dry polls cost. &#10697;</a></li>
               </ul>
               <h3>Inverse Search</h3>
               <ul>
                 <li class="ui-component-list--item ui-component-list--item-check">Finds queries by incoming event.</li>
                 <li class="ui-component-list--item ui-component-list--item-check">
-                  Avoids resource wasting in running every query for every incoming event.
+                  More-cost efficient for large number of queries.
                 </li>
               </ul>
+            </div>
+            <div>
+              <p class="ui-text-intro">How does Inverse Search reduces costs?</p>
+              <p>Given: K input events per second, N registered queries.</p>
+              <p>
+                In conventional stream data processing, every incoming event is processed by every registered query.
+                Hence, the resulting load may be estimated as <b>K * N</b>.
+              </p>
+              <p>
+                In case of Inverse Search, the search is executed once for every incoming event.
+                The Inverse Search itself uses the index, hence the every search operation complexity is O(log(N)).
+                Hence, the resulting load is <b>K * log(N)</b>.
+              </p>
+            </div>
+            <div>
+              <img src="cost-vs-query-num.svg" alt="figure: cost vs query num"/>
             </div>
           </div>
         </div>
@@ -217,7 +233,7 @@
           <h2>Concepts</h2>
           <h3>Event</h3>
           <ul class="ui-component-list ui-component-list-feature">
-            <li class="ui-component-list--item ui-component-list--item-check">In the <a href="https://cloudevents.io/">CloudEvents &#10697;</a> standard format</li>
+            <li class="ui-component-list--item ui-component-list--item-check"><a href="https://cloudevents.io/">CloudEvents &#10697;</a> standard format</li>
           </ul>
           <h3>Subscription</h3>
           <ul class="ui-component-list ui-component-list-feature">
