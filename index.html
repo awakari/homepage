@@ -57,7 +57,7 @@
                 </button>
                 <div class="dropdown-content">
                   <a href="#solutions-use-cases">Use Cases</a>
-                  <a href="#solutions-variants">Variants</a>
+                  <a href="#solutions-hosting">Hosting</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -65,7 +65,7 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="#pricing-free-usage">Free Usage</a>
+                  <a href="#pricing-free-trial">Free Trial</a>
                 </div>
               </div>
               <div class="dropdown">
@@ -120,6 +120,9 @@
           <p>Awakari is a service that combines publish/subscribe capability with real-time search.</p>
           <div class="ui-layout-grid ui-layout-grid-2">
             <div>
+              <img src="how-it-works.svg" alt="figure: how it works"/>
+            </div>
+            <div>
               <h3>How it works</h3>
               <p>Awakari is capable to consume event streams from any source.</p>
               <p>A user expresses their interest as a subscription with a certain search criteria.</p>
@@ -129,9 +132,6 @@
                 <li class="ui-component-list--item ui-component-list--item-check">Notifies the online user immediately</li>
               </ul>
               <p>A user is also able to publish own events to Awakari.</p>
-            </div>
-            <div>
-              <img src="how-it-works.svg" alt="figure: how it works"/>
             </div>
           </div>
           <div class="ui-layout-grid ui-layout-grid-2">
@@ -330,56 +330,37 @@
         </div>
       </section>
 
-      <section class="ui-section-feature" id="solutions-variants">
+      <section class="ui-section-feature" id="solutions-hosting">
         <div class="ui-layout-container">
-          <h2>Variants</h2>
-          <p>Awakari is a managed service.</p>
-          <p>To secure user data, any interaction always use encrypted channels and mutual TLS authentication.</p>
+          <h2>Hosting</h2>
           <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Public</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Ready to use event sources</li></p>
+              <h3>Serverless</h3>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Ready to use public event sources</li></p>
               <p><li class="ui-component-list--item ui-component-list--item-check">Shared event stream</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check"><a href="#pricing-free-usage">Free usage</a> available</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">No deployment is needed</li></p>
             </div>
             <div class="ui-component-card ui-component-card--pricing">
-              <h3>Private</h3>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Restrict data access</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-check">Dedicated event stream</li></p>
-              <p><li class="ui-component-list--item ui-component-list--item-avatar"><a href="mailto:awakari@awakari.com">Contact us &#10697;</a> to get a private instance</li></p>
+              <h3>On Premises</h3>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Private event sources</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-check">Strict event stream privacy</li></p>
+              <p><li class="ui-component-list--item ui-component-list--item-question">Deployment <a href="https://github.com/awakari/core#3-deployment">steps &#10697;</a></li></p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="ui-section-feature" id="pricing-free-usage">
+      <section class="ui-section-feature" id="pricing-free-trial">
         <div class="ui-layout-container">
-          <h2>Free Usage</h2>
-          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
-            <div class="ui-component-card ui-component-card--pricing">
-              <h3>Shared Limits</h3>
-              <!-- LIST -->
-              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
-                <li class="ui-component-list--item ui-component-list--item-cross">Demo purpose only</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Up to 1K subscriptions</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 100K messages</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Valid until 2024-06-17</li>
-              </ul>
-              <!-- CTA -->
-              <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Download Certificate</a>
-            </div>
-            <div class="ui-component-card ui-component-card--pricing">
-              <h3>Dedicated Limits</h3>
-              <!-- LIST -->
-              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
-                <li class="ui-component-list--item ui-component-list--item-avatar">Requires Authentication</li>
-                <li class="ui-component-list--item ui-component-list--item-check">1 subscription</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Publish up to 100 messages</li>
-                <li class="ui-component-list--item ui-component-list--item-check">Valid for 30 days</li>
-              </ul>
-              <!-- CTA -->
-              <a href="#get-dedicated-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
-            </div>
+          <h2>Free Trial</h2>
+          <div class="ui-component-card ui-component-card--pricing">
+            <!-- LIST -->
+            <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
+              <li class="ui-component-list--item ui-component-list--item-check">Up to 100 subscriptions</li>
+              <li class="ui-component-list--item ui-component-list--item-check">Valid for 90 days</li>
+            </ul>
+            <!-- CTA -->
+            <a href="#get-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
           </div>
         </div>
       </section>
@@ -387,6 +368,8 @@
       <section class="ui-section-feature" id="resources-quick-start">
         <div class="ui-layout-container">
           <h2>Quick Start</h2>
+          <p>The steps below apply to the Serverless Awakari only.</p>
+          <p>See also the <a href="https://github.com/awakari/core#4-usage">Core Usage  &#10697;</a> for an On-Premises deployment.</p>
           <h3>Preparation Steps</h3>
             <ol>
               <li>
@@ -560,10 +543,10 @@ grpcurl \
         </div>
       </section>
 
-      <section class="ui-section-feature" id="get-dedicated-access">
+      <section class="ui-section-feature" id="get-access">
         <div class="ui-layout-container">
-          <h2>Get Dedicated Access</h2>
-          <p>Please send a request <a href="mailto:awakari@awakari.com">email &#10697;</a> to get the certificate.</p>
+          <h2>Get Access</h2>
+          <p>Send a certificate request by <a href="mailto:awakari@awakari.com">email &#10697;</a>.</p>
           <p>The requested certificate will be in the response email.</p>
 
           <!-- TODO google auth when client cert issuing is automated -->
