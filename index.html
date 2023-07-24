@@ -353,14 +353,25 @@
       <section class="ui-section-feature" id="pricing-free-trial">
         <div class="ui-layout-container">
           <h2>Free Trial</h2>
-          <div class="ui-component-card ui-component-card--pricing">
-            <!-- LIST -->
-            <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
-              <li class="ui-component-list--item ui-component-list--item-check">Up to 100 subscriptions</li>
-              <li class="ui-component-list--item ui-component-list--item-check">Valid for 90 days</li>
-            </ul>
-            <!-- CTA -->
-            <a href="#get-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
+          <div class="ui-section-pricing__layout ui-layout-grid ui-layout-grid-2">
+            <div class="ui-component-card ui-component-card--pricing">
+              <h3>Serverless</h3>
+              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
+                <li class="ui-component-list--item ui-component-list--item-check">Up to 10 subscriptions</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Valid for 30 days</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Up to 100 messages to publish</li>
+                <li class="ui-component-list--item ui-component-list--item-cross">Coming soon</li>
+              </ul>
+            </div>
+            <div class="ui-component-card ui-component-card--pricing">
+              <h3>On Premises</h3>
+              <ul class="ui-component-list ui-component-list--pricing ui-layout-grid">
+                <li class="ui-component-list--item ui-component-list--item-check">Up to 100 subscriptions</li>
+                <li class="ui-component-list--item ui-component-list--item-check">Valid for 90 days</li>
+              </ul>
+              <!-- CTA -->
+              <a href="#get-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
+            </div>
           </div>
         </div>
       </section>
@@ -368,8 +379,8 @@
       <section class="ui-section-feature" id="resources-quick-start">
         <div class="ui-layout-container">
           <h2>Quick Start</h2>
-          <p>The steps below apply to the Serverless Awakari only.</p>
-          <p>See also the <a href="https://github.com/awakari/core#4-usage">Core Usage  &#10697;</a> for an On-Premises deployment.</p>
+          <p>The steps below apply to the Serverless Awakari only (coming soon).</p>
+          <p>See the <a href="https://github.com/awakari/core#4-usage">Core Usage &#10697;</a> for an On-Premises deployment.</p>
           <h3>Preparation Steps</h3>
             <ol>
               <li>
@@ -546,8 +557,21 @@ grpcurl \
       <section class="ui-section-feature" id="get-access">
         <div class="ui-layout-container">
           <h2>Get Access</h2>
-          <p>Send a certificate request by <a href="mailto:awakari@awakari.com">email &#10697;</a>.</p>
-          <p>The requested certificate will be in the response email.</p>
+          <p>Prepare a certificate request:</p>
+          <pre>
+openssl req -new -newkey rsa:4096 -nodes \
+  -keyout client.key \
+  -out client.csr \
+  -addext "subjectAltName=DNS:subscriptions.awakari.cloud" \
+  -subj '/CN=group0.company1.com'</pre>
+          <p>
+            Note: Never specify additional certificate attributes like "O", "OU", etc.
+            The resulting DN should not contain commas.
+          </p>
+          <p>
+            Send the certificate request by <a href="mailto:awakari@awakari.com">email &#10697;</a>.
+            The requested certificate will be in the response email.
+          </p>
 
           <!-- TODO google auth when client cert issuing is automated -->
           <!--
