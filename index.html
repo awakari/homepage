@@ -74,7 +74,8 @@
                 </button>
                 <div class="dropdown-content">
                   <div class="dropdown">
-                    <a href="#resources-quick-start">Quick Start</a>
+                    <a href="https://github.com/awakari/core#32-cloud-subscriptions">Cloud Subscriptions Access &#10697;</a>
+                    <a href="https://github.com/awakari/core#42-api">Using Core API &#10697;</a>
                     <a href="https://github.com/awakari/client-sdk-go">Using Client SDK &#10697;</a>
                     <a href="https://t.me/awakari">Community Group in Telegram &#10697;</a>
                   </div>
@@ -105,7 +106,7 @@
               <p class="ui-text-intro">Event-driven search.</p>
               <p>For fast and valuable decisions.</p>
               <div class="ui-component-cta ui-layout-flex">
-                <a href="#resources-quick-start" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Try Demo</a>
+                <a href="https://github.com/awakari/core#3-deployment" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Try Demo</a>
               </div>
             </div>
             <!-- IMAGE -->
@@ -370,211 +371,18 @@
                 <li class="ui-component-list--item ui-component-list--item-check">Valid for 90 days</li>
               </ul>
               <!-- CTA -->
-              <a href="#get-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Certificate</a>
+              <a href="https://github.com/awakari/core#32-cloud-subscriptions" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Request Access &#10697;</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="ui-section-feature" id="resources-quick-start">
-        <div class="ui-layout-container">
-          <h2>Quick Start</h2>
-          <p>The steps below apply to the Serverless Awakari only (coming soon).</p>
-          <p>See the <a href="https://github.com/awakari/core#4-usage">Core Usage &#10697;</a> for an On-Premises deployment.</p>
-          <h3>Preparation Steps</h3>
-            <ol>
-              <li>
-                Install <a href="https://github.com/fullstorydev/grpcurl">grpcurl &#10697;</a>
-              </li>
-              <li>
-                Download the shared certificate and save to the current directory:
-                <a href="certs/ca-demo.awakari.cloud.crt">CA file  &#10697;</a>,
-                <a href="certs/client-shared-demo.awakari.cloud.crt">client certificate &#10697;</a>
-                and <a href="certs/client-shared-demo.awakari.cloud.key">client key &#10697;</a>
-              </li>
-              <li>
-                Download the necessary proto files and save to the current directory:
-                <a href="proto/cloudevent.proto">Cloud Events &#10697;</a>,
-                <a href="proto/reader.proto">Reader &#10697;</a>
-                and <a href="proto/writer.proto">Writer &#10697;</a>.
-              </li>
-            </ol>
-          <h3>Basic Usage Walkthrough</h3>
-          <ol>
-              <li style="padding-bottom: 1.5rem">
-                Check access:
-                <pre>
-grpcurl \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -H 'X-Awakari-User-Id: john.doe' \
-  -d '{"subj": 2}' \
-  demo.awakari.cloud:443 \
-  awakari.api.limits.Service/Get</pre>
-                A successful response looks like:
-                <pre>
-{
-  "count": "123"
-}</pre>
-                The missing attribute "userId" in the response means that the limit is group-wide.
-                A group-wide limit means it's shared with other users using the same certificate.
-                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subject/subject.proto">subject options &#10697;</a>.</p>
-              </li>
-            <li style="padding-bottom: 1.5rem">
-              Next, check the current group-wide usage (skipping the "X-Awakari-User-Id" header):
-              <pre>
-grpcurl \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -d '{"subj": 2}' \
-  demo.awakari.cloud:443 \
-  awakari.api.permits.Service/GetUsage</pre>
-              A successful response looks like:
-            <pre>
-{
-  "count": "1",
-  "countTotal": "1",
-  "since": "2023-06-18T14:39:18.087Z"
-}</pre>
-              Meaning there's 1 subscription have been spent.
-              Hence, the remaining count of subscriptions those can be created is 123 - 1 = 122.
-            </li>
-              <li style="padding-bottom: 1.5rem">
-                Create a subscription:
-                <pre>
-grpcurl \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -H 'X-Awakari-User-Id: john.doe' \
-  -d @ \
-  demo.awakari.cloud:443 \
-  awakari.subscriptions.Service/Create</pre>
-                Insert the subscription input data and press ^D:
-                <pre>
-{
-   "description": "Tesla model S updates",
-   "enabled": true,
-   "cond": {
-      "not": false,
-      "tc": {
-        "key": "",
-        "term": "Tesla Model S",
-        "exact": false
-      }
-    }
-}</pre>
-                A successful response looks like:
-                <pre>
-{
-  "id": "547857e3-adfc-48a5-a49e-110cfdedbaab"
-}</pre>
-                Note the created subscription id and use it further to read the messages.
-                <p>Learn more about the <a href="https://github.com/awakari/client-sdk-go/blob/master/api/grpc/subscriptions/service.proto">Subscriptions API &#10697;</a>.</p>
-              </li>
-              <li style="padding-bottom: 1.5rem">
-                Start reader stream:
-                <pre>
-grpcurl \
-  -proto reader.proto \
-  -max-time 86400 \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -H 'X-Awakari-User-Id: john.doe' \
-  -d @ \
-  demo.awakari.cloud:443 \
-  awakari.reader.Service/Read</pre>
-                Specify the subscription id in the request and press Enter:
-                <pre>
-{"start": {"batchSize": 1, "subId": "547857e3-adfc-48a5-a49e-110cfdedbaab"}}</pre>
-              </li>
-              <li style="padding-bottom: 1.5rem">
-                Switch to another shell/window and start the writer stream:
-                <pre>
-grpcurl \
-  -proto writer.proto \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -H 'X-Awakari-User-Id: john.doe' \
-  -d @ \
-  demo.awakari.cloud:443 \
-  awakari.writer.Service/SubmitMessages</pre>
-                Then publish an event:
-                <pre>
-{
-   "msgs": [
-      {
-         "id": "3426d090-1b8a-4a09-ac9c-41f2de24d5ac",
-         "type": "example.type",
-         "source": "example/uri",
-         "spec_version": "1.0",
-         "attributes": {
-            "subject": {
-               "ce_string": "Tesla price updates"
-            },
-            "time": {
-               "ce_timestamp": "2023-07-03T23:20:50.52Z"
-            }
-         },
-         "text_data": "Tesla model S is now available at lower price"
-      }
-   ]
-}</pre>
-                A successful response looks like:
-                <pre>
-{
-  "ackCount": 1
-}</pre>
-                After this, you can close the writer stream by pressing ^C or leave it open to publish any other messages later.
-              </li>
-              <li style="padding-bottom: 1.5rem">Switch back to the reader stream window/shell and observe the message is received</li>
-              <li style="padding-bottom: 1.5rem">
-                Acknowledge the received message by typing:
-                <pre>
-{"ack": { "count": 1}}</pre>
-                After this, you can close the reader stream by pressing ^C or leave it open to read any other messages later.
-              </li>
-              <li style="padding-bottom: 1.5rem">
-                That's it! Delete the subscription to clean up:
-                <pre>
-grpcurl \
-  -key client-shared-demo.awakari.cloud.key \
-  -cert client-shared-demo.awakari.cloud.crt \
-  -cacert ca-demo.awakari.cloud.crt \
-  -H 'X-Awakari-User-Id: john.doe' \
-  -d '{"id": "547857e3-adfc-48a5-a49e-110cfdedbaab"}'
-  demo.awakari.cloud:443 \
-  awakari.subscriptions.Service/Delete</pre>
-              </li>
-            </ol>
-        </div>
-      </section>
-
+      <!-- TODO auth when client cert issuing is automated -->
+      <!--
       <section class="ui-section-feature" id="get-access">
         <div class="ui-layout-container">
           <h2>Get Access</h2>
-          <p>Prepare a certificate request:</p>
-          <pre>
-openssl req -new -newkey rsa:4096 -nodes \
-  -keyout client.key \
-  -out client.csr \
-  -addext "subjectAltName=DNS:subscriptions.awakari.cloud" \
-  -subj '/CN=group0.company1.com'</pre>
-          <p>
-            Note: Never specify additional certificate attributes like "O", "OU", etc.
-            The resulting DN should not contain commas.
-          </p>
-          <p>
-            Send the certificate request by <a href="mailto:awakari@awakari.com">email &#10697;</a>.
-            The requested certificate will be in the response email.
-          </p>
 
-          <!-- TODO google auth when client cert issuing is automated -->
-          <!--
           <script src="https://accounts.google.com/gsi/client" async defer></script>
           <script src="script.js" async defer></script>
           <div id="g_id_onload"
@@ -593,10 +401,9 @@ openssl req -new -newkey rsa:4096 -nodes \
                data-logo_alignment="left"
                data-width="200">
           </div>
-          -->
-
         </div>
       </section>
+      -->
 
     </main>
     <footer role="contentinfo" class="ui-section-footer">
