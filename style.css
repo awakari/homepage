@@ -395,7 +395,7 @@ div label[for=ui-component-toggle__yearly] {
   display: block;
   height: 1.125rem;
   padding-bottom: .25rem;
-  padding-top: 0;
+  padding-top: .25rem;
   position: relative;
   width: 1.125rem;
   z-index: 1;
