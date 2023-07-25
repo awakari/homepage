@@ -1079,8 +1079,6 @@ div label[for=ui-component-toggle__yearly] {
 .navbar {
   overflow: hidden;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .navbar a {
