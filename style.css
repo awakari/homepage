@@ -377,7 +377,10 @@ div label[for=ui-component-toggle__yearly] {
   padding-top: 1.25rem;
 }
 
-.ui-section-header__layout { justify-content: space-between; }
+.ui-section-header__layout {
+  justify-content: space-between;
+  position: fixed;
+}
 
 /* LOGO */
 
@@ -1076,6 +1079,8 @@ div label[for=ui-component-toggle__yearly] {
 .navbar {
   overflow: hidden;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar a {
