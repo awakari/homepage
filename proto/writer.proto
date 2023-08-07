@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package awakari.writer;
+package awakari.resolver;
 
 import "cloudevent.proto";
 
