@@ -106,7 +106,7 @@
               <p class="ui-text-intro">Event-driven search.</p>
               <p>For fast and valuable decisions.</p>
               <div class="ui-component-cta ui-layout-flex">
-                <a href="https://github.com/awakari#3-access" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Try Demo</a>
+                <a href="#access-web-demo" role="link" aria-label="#" class="ui-component-button ui-component-button-normal ui-component-button-primary">Try Demo</a>
               </div>
             </div>
             <!-- IMAGE -->
@@ -379,30 +379,17 @@
         </div>
       </section>
 
-      <!-- TODO auth when client cert issuing is automated -->
-      <!--
-      <section class="ui-section-feature" id="get-access">
+      <section class="ui-section-feature" id="access-web-demo">
         <div class="ui-layout-container">
-          <h2>Get Access</h2>
-
-          <script src="https://accounts.google.com/gsi/client" async defer></script>
-          <script src="script.js" async defer></script>
-          <div id="g_id_onload"
-               data-client_id="670591843914-e4vfiva92235duknmnrauflfe3qo326s"
-               data-context="signin"
-               data-ux_mode="popup"
-               data-callback="handleAuthGoogle"
-               data-auto_prompt="false">
-          </div>
-          <div class="g_id_signin"
-               data-type="standard"
-               data-shape="pill"
-               data-theme="filled-black"
-               data-text="continue_with"
-               data-size="large"
-               data-logo_alignment="left"
-               data-width="200">
-          </div>
+          <h2>Access Web Demo</h2>
+          <p>Awakari uses 2-factor authentication:</p>
+          <ol>
+            <li>Client TLS certificate</li>
+            <li>3-rd party identity provider (Google OAuth2 currently)</li>
+          </ol>
+          <p>First, install the <a href="/certs/ca.crt" download="awakari-demo-ca.crt">CA</a>.</p>
+          <p>Next, install the <a href="/certs/demo-client-0.p12" download="awakari-demo-client-0.p12">client certficate</a>.</p>
+          <p>Finally, navigate <a href="https://demo.awakari.cloud/web">https://demo.awakari.cloud/web</a></p>
         </div>
       </section>
       -->
