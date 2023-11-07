@@ -33,9 +33,10 @@
    inkscape:window-width="1916"
    inkscape:window-height="1036"
    inkscape:window-x="1680"
-   inkscape:window-y="42"
+   inkscape:window-y="22"
    inkscape:window-maximized="1"
-   inkscape:current-layer="id4" />&#10; <defs
+   inkscape:current-layer="id7"
+   showgrid="false" />&#10; <defs
    class="ClipPathGroup"
    id="defs2"><linearGradient
    id="linearGradient52"
@@ -43,6 +44,9 @@
      style="stop-color:#0000ff;stop-opacity:1;"
      offset="0"
      id="stop52" /><stop
+     style="stop-color:#00c800;stop-opacity:1;"
+     offset="0.28653815"
+     id="stop1" /><stop
      style="stop-color:#ff0000;stop-opacity:1;"
      offset="1"
      id="stop53" /></linearGradient>&#10;  <clipPath
