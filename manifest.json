@@ -1,0 +1,33 @@
+{
+  "name": "Awakari",
+  "background_color": "#ffffff",
+  "short_name": "awakari",
+  "start_url": "https://awakari.cloud",
+  "display": "standalone",
+  "description": "Awakari UI",
+  "icons": [
+    {
+      "src": "logo-color.svg",
+      "type": "image/svg+xml",
+      "sizes": "1000x1000"
+    },
+    {
+      "src": "logo-color-64.png",
+      "type": "image/png",
+      "sizes": "64x64",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "logo-color-256.png",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "logo-color-1500.png",
+      "type": "image/png",
+      "sizes": "1500x1500",
+      "purpose": "maskable any"
+    }
+  ]
+}
